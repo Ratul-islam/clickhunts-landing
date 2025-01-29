@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+.navItems {
+  display: flex;
+}
+.navItems a {
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: clamp(.3rem, 2vw, .9rem);
+  font-weight: 600;
+  transition: color .3s linear;
+}
+.navItems a:hover {
+  color: #333;
+}
+.logo-image{
+  width: clamp(8rem, 20vw, 10rem);
+}
+.navItems a:hover {
+  @apply text-blue-600;
+}
