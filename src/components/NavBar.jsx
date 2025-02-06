@@ -85,7 +85,6 @@ const NavBar = () => {
             </button>
           </div>
 
-          {/* Desktop Menu */}
           <motion.div
             className="hidden md:flex gap-6"
             initial="hidden"

@@ -38,7 +38,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://clickhunts.com/faq/"
+                  href="/faq/"
                   className="text-gray-400 hover:text-white transition duration-300"
                 >
                   FAQ

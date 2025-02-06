@@ -1,11 +1,17 @@
-import React, { useState } from "react";import NavBar from "../components/NavBar";
-;
+import React, { useState } from "react";
+import EnhancedPaymentMethods from "../components/enhanced-payments";
+import PartnersShowcase from "../components/partner-showcase";
+import GetStartedSection from "../components/getStarted";
+import AnimatedBanner from "../components/animatedBanner";
 
 const Home = () => {
 
   return (
-    <div className="h-[300vh]">
-      home
+    <div>
+      <PartnersShowcase/>
+      <GetStartedSection/>
+      <AnimatedBanner/>
+      <EnhancedPaymentMethods/>
     </div>
   );
 };
