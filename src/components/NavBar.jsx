@@ -37,12 +37,12 @@ const NavBar = () => {
       initial={{ opacity: 0, x: -50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
-      className="p-4 max-w-6xl mx-auto"
+      className="p-4 max-w-6xl mx-auto relative"
     >
       <div
         className={`flex justify-between w-full items-center transition-all duration-300 ${
           isSticky
-            ? "fixed top-0 left-0 right-0 bg-white shadow-md z-10 transform transition-all duration-300 ease-in-out py-6"
+            ? "fixed top-0 left-0 right-0 bg-white shadow-md z-10 transform transition-all duration-300 ease-in-out px-10 py-6"
             : "relative"
         }`}
       >
@@ -107,7 +107,8 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div
+        <motion.div className="fixed z-30 w-[93vw] top-[75px]" >
+          <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -125,6 +126,7 @@ const NavBar = () => {
               {item.title}
             </NavLink>
           ))}
+        </motion.div>
         </motion.div>
       )}
     </motion.div>

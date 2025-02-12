@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: #1a202c;
+    background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+    min-height: 100vh;
+}
+
+.powerContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.powerHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.powerHeader::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(4, 137, 152, 0.1) 0%, transparent 70%);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #048998 0%, #036d7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #4a5568;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+}
+
+.integration-grid::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle at top right, rgba(4, 137, 152, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: 2rem;
+}
+
+.integration-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+               0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(4, 137, 152, 0.1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.integration-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #048998, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.integration-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.15);
+}
+
+.integration-card:hover::before {
+    opacity: 1;
+}
+
+.icon-powerContainer {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(4, 137, 152, 0.1) 0%, rgba(4, 137, 152, 0.05) 100%);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.integration-card:hover .icon-powerContainer {
+    transform: scale(1.1);
+}
+
+.integration-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #048998;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.integration-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.875rem;
+}
+
+.integration-item {
+    display: flex;
+    align-items: center;
+    color: #4a5568;
+    font-size: 0.9375rem;
+    transition: transform 0.2s ease;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.integration-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #048998;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.integration-item:hover {
+    transform: translateX(5px);
+    color: #048998;
+}
+
+.demo-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #048998 0%, #037885 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    box-shadow: 0 4px 12px rgba(4, 137, 152, 0.15);
+}
+
+.demo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(4, 137, 152, 0.2);
+}
+
+@media (max-width: 1280px) {
+    .integration-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .integration-grid {
+        grid-template-columns: 1fr;
+    }
+    .powerContainer {
+        padding: 2rem 1rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+}

@@ -110,7 +110,7 @@ body {
 .hero-banner {
     position: relative;
     height: 400px;
-    background: linear-gradient(rgba(4, 137, 152, 0.9), rgba(4, 137, 152, 0.9)), url('');
+    background: linear-gradient(rgba(4, 137, 152, 0.9), rgba(4, 137, 152, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;

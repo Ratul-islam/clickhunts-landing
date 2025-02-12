@@ -100,7 +100,7 @@ const EnhancedPaymentMethods = () => {
 
         {/* Scrolling Container */}
         <div 
-          className="relative overflow-x-hidden py-20"
+          className="relative overflow-x-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
