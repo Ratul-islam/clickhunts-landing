@@ -164,7 +164,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .grid {
+    .topGrid {
         grid-template-columns: 1fr;
     }
     .container {

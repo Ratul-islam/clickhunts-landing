@@ -1,157 +1,94 @@
-import "../css/topCountry.css";
+import '../css/topCountry.css';
 
 const TopCountries = () => {
+  const countries = [
+    {
+      name: "United States",
+      population: "331M+ Population",
+      status: "Premium Market",
+      verticals: "Finance & Insurance",
+      tags: ["Credit Cards", "Insurance", "Trading"]
+    },
+    {
+      name: "Canada",
+      population: "38M+ Population",
+      status: "High Value",
+      verticals: "Health & Wellness",
+      tags: ["Nutra", "CBD", "Insurance"]
+    },
+    {
+      name: "Germany",
+      population: "83M+ Population",
+      status: "Growing Market",
+      verticals: "Technology & Education",
+      tags: ["FinTech", "E-learning", "SaaS"]
+    },
+    {
+      name: "United Kingdom",
+      population: "67M+ Population",
+      status: "Premium Market",
+      verticals: "Finance & Gaming",
+      tags: ["Trading", "iGaming", "Crypto"]
+    },
+    {
+      name: "Australia",
+      population: "25M+ Population",
+      status: "High ROI",
+      verticals: "Lifestyle & Finance",
+      tags: ["Dating", "Insurance", "Health"]
+    },
+    {
+      name: "New Zealand",
+      population: "5M+ Population",
+      status: "Emerging",
+      verticals: "Education & Finance",
+      tags: ["Education", "Investments", "Green Tech"]
+    }
+  ];
+
   return (
-    <div class="topContainer">
-        <header class="topHeader">
-            <h1 class="title">Premium Market Overview</h1>
-            <p class="subtitle">Top-performing markets with exceptional conversion rates and premium traffic quality</p>
-        </header>
+    <div className="topContainer">
+      <header className="topHeader">
+        <h1 className="title">Premium Market Overview</h1>
+        <p className="subtitle">
+          Top-performing markets with exceptional conversion rates and premium traffic quality
+        </p>
+      </header>
 
-        <div class="topGrid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="USA flag" class="flag"/>
-                        United States
-                    </div>
-                    <div class="stats">
-                        <span>331M+ Population</span>
-                    </div>
-                    <div class="status-badge">Premium Market</div>
-                </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Finance & Insurance</div>
-                        <div class="tags">
-                            <span class="tag">Credit Cards</span>
-                            <span class="tag">Insurance</span>
-                            <span class="tag">Trading</span>
-                        </div>
-                    </div>
-                </div>
+      <div className="topGrid">
+        {countries.map((country) => (
+          <div key={country.name} className="card">
+            <div className="card-header">
+              <div className="country-name">
+                <img
+                  src="/api/placeholder/48/32"
+                  alt={`${country.name} flag`}
+                  className="flag"
+                />
+                {country.name}
+              </div>
+              <div className="stats">
+                <span>{country.population}</span>
+              </div>
+              <div className="status-badge">{country.status}</div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="Canada flag" class="flag"/>
-                        Canada
-                    </div>
-                    <div class="stats">
-                        <span>38M+ Population</span>
-                    </div>
-                    <div class="status-badge">High Value</div>
+            
+            <div className="card-body">
+              <div className="offer-section">
+                <div className="section-title">Top Verticals</div>
+                <div className="offer-value">{country.verticals}</div>
+                <div className="tags">
+                  {country.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Health & Wellness</div>
-                        <div class="tags">
-                            <span class="tag">Nutra</span>
-                            <span class="tag">CBD</span>
-                            <span class="tag">Insurance</span>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="Germany flag" class="flag"/>
-                        Germany
-                    </div>
-                    <div class="stats">
-                        <span>83M+ Population</span>
-                    </div>
-                    <div class="status-badge">Growing Market</div>
-                </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Technology & Education</div>
-                        <div class="tags">
-                            <span class="tag">FinTech</span>
-                            <span class="tag">E-learning</span>
-                            <span class="tag">SaaS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="UK flag" class="flag"/>
-                        United Kingdom
-                    </div>
-                    <div class="stats">
-                        <span>67M+ Population</span>
-                    </div>
-                    <div class="status-badge">Premium Market</div>
-                </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Finance & Gaming</div>
-                        <div class="tags">
-                            <span class="tag">Trading</span>
-                            <span class="tag">iGaming</span>
-                            <span class="tag">Crypto</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="Australia flag" class="flag"/>
-                        Australia
-                    </div>
-                    <div class="stats">
-                        <span>25M+ Population</span>
-                    </div>
-                    <div class="status-badge">High ROI</div>
-                </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Lifestyle & Finance</div>
-                        <div class="tags">
-                            <span class="tag">Dating</span>
-                            <span class="tag">Insurance</span>
-                            <span class="tag">Health</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="country-name">
-                        <img src="/api/placeholder/48/32" alt="New Zealand flag" class="flag"/>
-                        New Zealand
-                    </div>
-                    <div class="stats">
-                        <span>5M+ Population</span>
-                    </div>
-                    <div class="status-badge">Emerging</div>
-                </div>
-                <div class="card-body">
-                    <div class="offer-section">
-                        <div class="section-title">Top Verticals</div>
-                        <div class="offer-value">Education & Finance</div>
-                        <div class="tags">
-                            <span class="tag">Education</span>
-                            <span class="tag">Investments</span>
-                            <span class="tag">Green Tech</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

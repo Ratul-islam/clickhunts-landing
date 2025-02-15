@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const Customers = () => {
   const [activeTab, setActiveTab] = useState('OPERATOR');
+  const [containerSize, setContainerSize] = useState(0);
+  const containerRef = useRef(null);
   const bgColor = '#048998';
 
   const tabs = ['OPERATOR', 'AFFILIATES', 'LINKS'];
@@ -60,8 +62,30 @@ const Customers = () => {
     }
   };
 
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.offsetWidth;
+        setContainerSize(width);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
+
+  const getResponsiveRadius = () => {
+    return containerSize * 0.4; // 40% of container width
+  };
+
+  const getResponsiveCircleSize = () => {
+    const baseSize = containerSize * 0.12; // 12% of container width
+    return Math.min(Math.max(baseSize, 48), 96); // min 48px, max 96px
+  };
+
   return (
-    <div className="min-h-screen" style={{ backgroundColor: bgColor }}>
+    <div className="pb-10" style={{ backgroundColor: bgColor }}>
       <div className="max-w-6xl mx-auto p-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-12">
@@ -71,7 +95,7 @@ const Customers = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2 rounded-full transition-colors ${
+                className={`text-sm md:text-md px-3 md:px-6 py-2 rounded-full transition-colors ${
                   activeTab === tab 
                     ? tab === 'LINKS' 
                       ? 'bg-purple-600 text-white'
@@ -88,29 +112,37 @@ const Customers = () => {
         {/* Main Content */}
         <div className="flex flex-col md:flex-row gap-12 items-center">
           {/* Circular Diagram */}
-          <div className="relative w-96 h-96">
+          <div 
+            ref={containerRef}
+            className="relative"
+            style={{ width: "clamp(200px, 20vw, 700px)", height: "clamp(200px, 20vw, 700px)" }}
+          >
             <div className="absolute inset-0 bg-gray-800 bg-opacity-50 rounded-full" />
             <div className="absolute inset-8 bg-gray-800 bg-opacity-70 rounded-full" />
             <div className="absolute inset-16 bg-gray-800 bg-opacity-90 rounded-full flex items-center justify-center">
-              <span className="text-white text-xl font-semibold">
+              <span className="text-white text-xl font-semibold text-center">
                 {activeTab === 'LINKS' ? 'Operator\nAffiliates' : activeTab.charAt(0) + activeTab.slice(1).toLowerCase()}
               </span>
             </div>
             
             {content[activeTab].features.map((feature, index) => {
               const angle = (index * 360) / content[activeTab].features.length;
-              const radius = 160;
+              const radius = getResponsiveRadius()*1.3;
+              const circleSize = getResponsiveCircleSize();
               const x = Math.cos((angle - 90) * (Math.PI / 180)) * radius;
               const y = Math.sin((angle - 90) * (Math.PI / 180)) * radius;
               
               return (
                 <div
                   key={feature.title}
-                  className={`absolute w-24 h-24 rounded-full flex items-center justify-center text-center text-white text-sm
+                  className={`absolute rounded-full flex items-center justify-center text-center text-white
                     ${feature.color === 'green' ? 'bg-green-500' : 'bg-purple-600'}`}
                   style={{
-                    transform: `translate(${x + 192}px, ${y + 192}px)`,
-                    transition: 'all 0.3s ease'
+                    width: `${circleSize*1.5}px`,
+                    height: `${circleSize*1.5}px`,
+                    transform: `translate(${x + containerSize/7}px, ${y + containerSize/2}px)`,
+                    transition: 'all 0.3s ease',
+                    fontSize: `${Math.max(circleSize * 0.16, 12)}px`
                   }}
                 >
                   {feature.title}
