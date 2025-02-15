@@ -54,7 +54,7 @@ const PowerfullIntegration = () => {
                 </div>
                 <h3 class="integration-title">Tools & Analytics</h3>
                 <ul class="integration-list">
-                    <li class="integration-item">Hubspot CRM</li>
+                    <li class="integration-item">Everflow</li>
                     <li class="integration-item">IPQualityScore</li>
                     <li class="integration-item">Advanced Analytics</li>
                     <li class="integration-item">Campaign Tracking</li>

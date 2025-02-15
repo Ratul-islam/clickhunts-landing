@@ -108,7 +108,33 @@ const CompanyOverview = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+
+
+        <div className="fade-in">
+        <div className="business-grid">
+          <div className="model-card">
+            <div className="model-icon">CPA</div>
+            <h3>Cost Per Action</h3>
+            <p>Pay only for completed actions</p>
+          </div>
+          <div className="model-card">
+            <div className="model-icon">CPL</div>
+            <h3>Cost Per Lead</h3>
+            <p>Lead generation focused</p>
+          </div>
+          <div className="model-card">
+            <div className="model-icon">CPS</div>
+            <h3>Cost Per Sale</h3>
+            <p>Sales-driven campaigns</p>
+          </div>
+          <div className="model-card">
+            <div className="model-icon">CPC</div>
+            <h3>Cost Per Click</h3>
+            <p>Traffic-based pricing</p>
+          </div>
+        </div>
+      </div>
+        {/* <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="flex border-b">
             {['stats', 'geos', 'business'].map((tab) => (
               <button
@@ -128,7 +154,7 @@ const CompanyOverview = () => {
           <div className="p-8 bg-gradient-to-br from-white to-gray-50">
             {TabContent[activeTab]}
           </div>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

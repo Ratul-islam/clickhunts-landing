@@ -55,14 +55,6 @@ const EnhancedPaymentMethods = () => {
       logo: '/api/placeholder/200/80'
     },
     {
-      name: 'Perfect Money',
-      type: 'Digital Currency',
-      description: 'Online payment solution',
-      minPayout: '100 USD',
-      processingTime: 'Instant',
-      logo: '/api/placeholder/200/80'
-    },
-    {
       name: 'USDT',
       type: 'Cryptocurrency',
       description: 'Stablecoin digital currency',
@@ -81,7 +73,7 @@ const EnhancedPaymentMethods = () => {
   ];
 
   return (
-    <div className="bg-white py-24 relative overflow-hidden">
+    <div className="bg-white py-24 pb-5 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#048998]/5 to-transparent"></div>
       

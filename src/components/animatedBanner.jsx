@@ -5,7 +5,7 @@ const AnimatedBanner = () => {
     <div className="relative w-full h-[400px] overflow-hidden bg-[#1a237e]">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-900 opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#048998] to-[#048998] opacity-90" />
         
         {/* Hexagon Grid */}
         {[...Array(20)].map((_, i) => (

@@ -25,19 +25,19 @@ const Home = () => {
       <Verticles/>
       <TopCountries/>
       <PowerfullIntegration/>
-      <CompanyOverview/>
       <ReadyToPertner/>
+      <CompanyOverview/>
       <PremiumNetworkSection/>
       <Customers/>
       <AdvertiserSection/>
-      <PublisherSection/>
+      {/* <PublisherSection/> */}
       <OffersList/>
       <TestimonialsTable/>
-      <AnimatedBanner/>
 
 
       <PartnersShowcase/>
       <EnhancedPaymentMethods/>
+      <AnimatedBanner/>
     </div>
   );
 };
