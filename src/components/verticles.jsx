@@ -21,7 +21,7 @@ const CategoryCell = ({ icon, title, color, delay }) => {
         animationDelay: `${delay}ms`,
       }}
     >
-      <div className="relative z-10 flex items-center gap-4">
+      <div className="relative z-10 flex justify-center md:justify-start items-center md:gap-4">
         <div 
           className="flex-shrink-0 p-4 rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
           style={{ 
@@ -32,8 +32,8 @@ const CategoryCell = ({ icon, title, color, delay }) => {
           {icon}
         </div>
         
-        <div>
-          <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#048998] transition-colors duration-300">
+        <div className="hidden md:block">
+          <h3 className="text-md md:text-lg font-semibold text-gray-900 group-hover:text-[#048998] transition-colors duration-300">
             {title}
           </h3>
           <div className="w-0 group-hover:w-full h-0.5 transition-all duration-300 mt-1 rounded-full" 

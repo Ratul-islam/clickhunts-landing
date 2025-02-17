@@ -97,7 +97,7 @@ const CompanyOverview = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white">
       <div className="max-w-6xl mx-auto p-8">
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">WHO IS CLICKHUNTS</h1>

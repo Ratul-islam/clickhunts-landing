@@ -67,7 +67,7 @@ const PremiumNetworkSection = () => {
                       <circle
                         cx={x}
                         cy={y}
-                        r="25"
+                        r="35"
                         fill="white"
                         stroke="#048998"
                         strokeWidth="2"

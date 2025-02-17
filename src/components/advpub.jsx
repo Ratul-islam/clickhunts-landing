@@ -140,7 +140,7 @@ const AdvertiserSection = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row gap-16">
           {/* Stats Dashboard */}
           <div className="lg:w-1/2">
             {/* <StatsDashboard /> */}
@@ -201,7 +201,7 @@ const AdvertiserSection = () => {
               </button>
             </div>
           </div>
-          <div className="bg-gray-200 h-[600px] w-[1px] "></div>
+          <div className="hidden xl:block bg-gray-200 h-[600px] w-[1px] "></div>
           {/* Content Section */}
           <div className="lg:w-1/2">
             <div

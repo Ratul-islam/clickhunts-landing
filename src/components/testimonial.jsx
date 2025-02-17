@@ -68,9 +68,7 @@ const TestimonialsTable = () => {
         rating: 5,
         content: "ClickHunts is the best network, fast payments, trustworthy, with friendly affiliate managers. I recommend anyone looking for the best CPA network to give ClickHunts a try.",
         author: "Luna camila"
-      }
-    ],
-    [
+      },
       {
         rating: 5,
         content: "I'm loving this platform! The manager is very attentive, always concerned with helping us, always bringing great offers, the offers are approved quickly and there's also the benefit of an increase in commission when we start selling well.",
@@ -85,9 +83,7 @@ const TestimonialsTable = () => {
         rating: 5,
         content: "ClickHunts truly stands out as the premier network in the industry. With consistently prompt payments, the most competitive payouts across all offers, and unparalleled support from our dedicated AM, Matin, we strive to exceed expectations every step of the way.",
         author: "Camille"
-      }
-    ],
-    [
+      },
       {
         rating: 5,
         content: "Very happy to work with Click Hunts. It's an excellent network. I recommend trying their program. The support is great and quick. The payment system is really fast on high volumes.",

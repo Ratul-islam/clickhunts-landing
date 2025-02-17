@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api from "./api/api";
-import Loader from "./components/loader";
-import WhyChoose from "./components/whyChoose";
+import api from "../api/api";
+import Loader from "../components/offer/loader";
+import WhyChoose from "../components/offer/whyChoose";
 
 const OfferDetails = () => {
-  const { id, offerId } = useParams();
+  const { offerId } = useParams();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,7 +33,8 @@ const OfferDetails = () => {
   }
   
   return (
-    <div className="">
+    <div className="pt-5">
+
       <div className="flex justify-center">
         <div className="m-3 md:m-10 w-screen max-w-screen-xl">
           <div className="flex flex-col">

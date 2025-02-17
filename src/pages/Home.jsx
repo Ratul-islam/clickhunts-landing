@@ -15,26 +15,26 @@ import AdvertiserSection from "../components/advpub";
 import PublisherSection from "../components/publisher";
 import OffersList from "../components/offers";
 import TestimonialsTable from "../components/testimonial";
+import Hero from "../components/hero";
 
 const Home = () => {
 
   return (
     <div>
-      <StatsBanner/>
+      <Hero/>
       <GetStartedSection/>
+      <StatsBanner/>
       <Verticles/>
       <TopCountries/>
       <PowerfullIntegration/>
       <ReadyToPertner/>
       <CompanyOverview/>
       <PremiumNetworkSection/>
-      <Customers/>
+      {/* <Customers/> */}
       <AdvertiserSection/>
       {/* <PublisherSection/> */}
       <OffersList/>
       <TestimonialsTable/>
-
-
       <PartnersShowcase/>
       <EnhancedPaymentMethods/>
       <AnimatedBanner/>

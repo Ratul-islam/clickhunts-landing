@@ -7,42 +7,42 @@ const TopCountries = () => {
       population: "331M+ Population",
       status: "Premium Market",
       verticals: "Finance & Insurance",
-      tags: ["Credit Cards", "Insurance", "Trading"]
+      tags: ["CC Submit", "Finance","Health", "E-Commerce", "Email Submit", "Loan","Real Estate"]
     },
     {
       name: "Canada",
       population: "38M+ Population",
       status: "High Value",
       verticals: "Health & Wellness",
-      tags: ["Nutra", "CBD", "Insurance"]
+      tags: ["Nutra", "CBD", "Insurance", "E-Commerce", "Health", "CBD", "Sweepstakes", "Survey"]
     },
     {
       name: "Germany",
       population: "83M+ Population",
       status: "Growing Market",
       verticals: "Technology & Education",
-      tags: ["FinTech", "E-learning", "SaaS"]
+      tags: [ "Health", "CBD", "COD", "E-Commerce", "Sweepstakes"]
     },
     {
       name: "United Kingdom",
       population: "67M+ Population",
       status: "Premium Market",
       verticals: "Finance & Gaming",
-      tags: ["Trading", "iGaming", "Crypto"]
+      tags: ["E-Commerce", "Bizopp", "Email Submit", "Health"]
     },
     {
       name: "Australia",
       population: "25M+ Population",
       status: "High ROI",
       verticals: "Lifestyle & Finance",
-      tags: ["Dating", "Insurance", "Health"]
+      tags: ["Bizoop", "Sweepstakes", "Health", "E-Commerce", "CBD"]
     },
     {
       name: "New Zealand",
       population: "5M+ Population",
       status: "Emerging",
       verticals: "Education & Finance",
-      tags: ["Education", "Investments", "Green Tech"]
+      tags: ["Email Submit", "Health", "E-Commerce", "Sweepstakes"]
     }
   ];
 
@@ -67,17 +67,17 @@ const TopCountries = () => {
                 />
                 {country.name}
               </div>
-              <div className="stats">
+              {/* <div className="stats">
                 <span>{country.population}</span>
-              </div>
+              </div> */}
               <div className="status-badge">{country.status}</div>
             </div>
             
             <div className="card-body">
               <div className="offer-section">
-                <div className="section-title">Top Verticals</div>
-                <div className="offer-value">{country.verticals}</div>
-                <div className="tags">
+                {/* <div className="section-title">Top Verticals</div> */}
+                {/* <div className="offer-value">{country.verticals}</div> */}
+                <div className="tags flex flex-wrap justify-center items-center">
                   {country.tags.map((tag) => (
                     <span key={tag} className="tag">
                       {tag}

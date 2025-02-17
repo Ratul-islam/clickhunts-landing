@@ -6,8 +6,14 @@ module.exports = {
     extend: {
       animation: {
         'ripple-shock': 'rippleShockSlideIn 1s ease-in-out forwards',
+        fade: 'fadeInOut 1s ease-in-out infinite',
       },
       keyframes: {
+        
+        fadeInOut: {
+          '0%, 100%': { opacity: 0 },
+          '50%': { opacity: 1 },
+        },
         rippleShockSlideIn: {
           '0%': {
             opacity: '0',

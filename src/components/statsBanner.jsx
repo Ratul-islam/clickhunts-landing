@@ -52,37 +52,30 @@ const StatsBanner = () => {
   
   const stats = [
     {
-      icon: <Users className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />,
+      icon: <Users className="w-4 h-4 md:w-6 md:h-8 lg:w-10" />,
       number: 210,
       suffix: "+",
       label: "Active Advertisers",
       description: "Growing partnerships"
     },
     {
-      icon: <Globe className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />,
+      icon: <Globe  className="w-4 h-4 md:w-6 md:h-8 lg:w-10" />,
       number: 7500,
       suffix: "+",
       label: "Active Publishers",
       description: "Worldwide network"
     },
     {
-      icon: <Package className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />,
+      icon: <Package   className="w-4 h-4 md:w-6 md:h-8 lg:w-10" />,
       number: 1800,
       suffix: "+",
       label: "Active Offers",
       description: "High-converting campaigns"
-    },
-    {
-      icon: <Radio className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />,
-      number: 1,
-      suffix: "",
-      label: "Network",
-      description: "Unified platform"
     }
   ];
 
   return (
-    <div className="w-full py-12 md:py-16 lg:py-20" style={{ backgroundColor: '#F8F8FB' }}>
+    <div className="w-full py-8 md:py-12 lg:py-14" style={{ backgroundColor: '#F8F8FB' }}>
       <div className="max-w-[90%] md:max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4">
         {/* Mobile Layout (< 768px) */}
         <div className="grid grid-cols-2 gap-6 md:hidden">
@@ -97,7 +90,7 @@ const StatsBanner = () => {
               }}
             >
               <div 
-                className="mb-4 p-3 rounded-full" 
+                className="mb-4 p-2 rounded-full" 
                 style={{ 
                   background: `linear-gradient(45deg, ${brandColor}, ${brandColor}dd)`,
                   boxShadow: `0 4px 12px ${brandColor}33`
@@ -120,13 +113,13 @@ const StatsBanner = () => {
         </div>
 
         {/* Tablet & Desktop Layout (≥ 768px) */}
-        <div className="hidden md:flex items-center justify-between">
+        <div className="hidden md:flex items-center justify-between max-w-[800px] mx-auto">
           {stats.map((stat, index) => (
             <React.Fragment key={index}>
               <div className="flex flex-col items-center group transition-all duration-300">
                 <div className="mb-6 transform transition-all duration-300 group-hover:scale-105">
                   <div 
-                    className="p-5 lg:p-6 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300"
+                    className="p-3 lg:p-4 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300"
                     style={{ 
                       background: `linear-gradient(45deg, ${brandColor}, ${brandColor}dd)`,
                       boxShadow: `0 4px 12px ${brandColor}33`
@@ -162,14 +155,14 @@ const StatsBanner = () => {
                 </div>
               )}
               
-              {index === stats.length - 2 && (
+              {/* {index === stats.length - 2 && (
                 <div 
                   className="text-4xl lg:text-5xl font-light transform hover:scale-110 transition-transform duration-300"
                   style={{ color: brandColor }}
                 >
                   =
                 </div>
-              )}
+              )} */}
             </React.Fragment>
           ))}
         </div>

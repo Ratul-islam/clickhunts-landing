@@ -1,49 +1,108 @@
 import React from 'react';
+import { delay, motion, useInView } from 'framer-motion';
 
 const AnimatedBanner = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, {
+    threshold: 0.2,
+    once: false
+  });
+
+  const textRevealVariants = {
+    hidden: { 
+      y: 100,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.33, 1, 0.68, 1],
+        delay: .5
+      }
+    }
+  };
+
+  const wordRevealVariants = {
+    hidden: { 
+      y: 40,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.33, 1, 0.68, 1],
+        delay: 0.5
+      }
+    }
+  };
+
   return (
-    <div className="relative w-full h-[400px] overflow-hidden bg-[#1a237e]">
-      {/* Animated Background */}
+    <motion.div 
+      ref={ref}
+      className="relative w-full h-[400px] overflow-hidden bg-[#1a237e]"
+    >
+      {/* Static Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#048998] to-[#048998] opacity-90" />
         
-        {/* Hexagon Grid */}
-        {[...Array(20)].map((_, i) => (
+        {/* Static Hexagon Grid */}
+        {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
-            className="absolute hexagon border-2 border-blue-400/20 animate-float"
+            className="absolute hexagon border-2 border-blue-400/20"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.5}s`,
               width: '60px',
               height: '60px'
             }}
           />
         ))}
         
-        {/* Animated Particles */}
-        {[...Array(50)].map((_, i) => (
+        {/* Static Particles */}
+        {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full animate-particle"
+            className="absolute w-2 h-2 bg-blue-400 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.2}s`,
               opacity: 0.3
             }}
           />
         ))}
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
-        <h1 className="text-6xl font-bold mb-6 text-center animate-fadeIn">
-          Connect & Earn
-        </h1>
-        <div className="text-2xl tracking-wide animate-fadeIn animation-delay-500">
-          Be Modern | Be Digital
+      {/* Content with Reveal Animation */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white overflow-hidden">
+        <div className="overflow-hidden">
+          <motion.h1 
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            variants={textRevealVariants}
+            className="text-6xl font-bold mb-6 text-center"
+          >
+            Connect & Earn
+          </motion.h1>
+        </div>
+        
+        <div className="overflow-hidden flex gap-4">
+          {["Be Modern", "|", "Be Digital"].map((text, index) => (
+            <motion.div
+              key={index}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+              variants={wordRevealVariants}
+              transition={{ delay: index * 0.1 }}
+              className="text-2xl tracking-wide"
+            >
+              {text}
+            </motion.div>
+          ))}
         </div>
       </div>
 
@@ -51,39 +110,8 @@ const AnimatedBanner = () => {
         .hexagon {
           clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         }
-
-        @keyframes float {
-          0%, 100% { transform: translate(0, 0) rotate(0deg); }
-          50% { transform: translate(10px, -10px) rotate(5deg); }
-        }
-
-        @keyframes particle {
-          0%, 100% { transform: translate(0, 0); opacity: 0.3; }
-          50% { transform: translate(20px, -20px); opacity: 0.6; }
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-particle {
-          animation: particle 4s ease-in-out infinite;
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out forwards;
-        }
-
-        .animation-delay-500 {
-          animation-delay: 500ms;
-        }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 
