@@ -20,7 +20,7 @@ const EnhancedPaymentMethods = () => {
       description: 'Global payment platform for professionals',
       minPayout: '50 USD',
       processingTime: 'Instant to 2 hours',
-      logo: '/api/placeholder/200/80'
+      logo: '/assets/payment/payoneer.png'
     },
     {
       name: 'PayPal',
@@ -52,7 +52,8 @@ const EnhancedPaymentMethods = () => {
       description: 'Electronic payment system',
       minPayout: '50 USD',
       processingTime: 'Instant',
-      logo: '/api/placeholder/200/80'
+      
+      logo: '/assets/payment/webmoney.png'
     },
     {
       name: 'USDT',
@@ -60,7 +61,7 @@ const EnhancedPaymentMethods = () => {
       description: 'Stablecoin digital currency',
       minPayout: '100 USDT',
       processingTime: '10-30 minutes',
-      logo: '/api/placeholder/200/80'
+      logo: '/assets/payment/tether.png'
     },
     {
       name: 'Bitcoin',
@@ -68,12 +69,12 @@ const EnhancedPaymentMethods = () => {
       description: 'Digital cryptocurrency payments',
       minPayout: '0.001 BTC',
       processingTime: '1-2 hours',
-      logo: '/assets/payment/bitcoin.svg'
+      logo: '/assets/payment/bitcoin.jpg'
     }
   ];
 
   return (
-    <div className="bg-white py-24 pb-5 relative overflow-hidden">
+    <div className="bg-white py-24 relative overflow-hidden ">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#048998]/5 to-transparent"></div>
       
@@ -92,7 +93,7 @@ const EnhancedPaymentMethods = () => {
 
         {/* Scrolling Container */}
         <div 
-          className="relative overflow-x-hidden"
+          className="relative overflow-x-hidden pb-[24px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -102,7 +103,7 @@ const EnhancedPaymentMethods = () => {
 
           {/* Payment Methods */}
           <div 
-            className="flex transition-transform duration-1000 ease-linear"
+            className="flex transition-transform duration-100 ease-linear"
             style={{ transform: `translateX(-${scrollPosition}%)` }}
           >
             {[...paymentMethods, ...paymentMethods].map((method, index) => (

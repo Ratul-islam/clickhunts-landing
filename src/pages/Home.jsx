@@ -22,21 +22,21 @@ const Home = () => {
   return (
     <div>
       <Hero/>
+      <CompanyOverview/>
+      <PremiumNetworkSection/>
       <GetStartedSection/>
       <StatsBanner/>
       <Verticles/>
       <TopCountries/>
-      <PowerfullIntegration/>
       <ReadyToPertner/>
-      <CompanyOverview/>
-      <PremiumNetworkSection/>
-      {/* <Customers/> */}
       <AdvertiserSection/>
+      <PowerfullIntegration/>
+      {/* <Customers/> */}
       {/* <PublisherSection/> */}
-      <OffersList/>
       <TestimonialsTable/>
       <PartnersShowcase/>
       <EnhancedPaymentMethods/>
+      <OffersList/>
       <AnimatedBanner/>
     </div>
   );

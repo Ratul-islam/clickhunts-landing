@@ -5,7 +5,7 @@ import home from "../assets/home.jpg";
 const Hero = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-white">
-      <div className="mx-auto px-8 md:px-24 py-16 lg:py-24">
+      <div className="mx-auto px-8 md:px-24 py-16 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div

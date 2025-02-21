@@ -46,7 +46,6 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
 
 
   const navigateNext=(name, id)=>{
-    console.log(name)
     navigate(`/${name}/${id}`, {
       state: { id }
     });
@@ -108,7 +107,7 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
                       {data?.map((elem, id) => {
                         return (
                           <tr className="hover:bg-gray-100 transition-all ease-out duration-200 cursor-pointer">
-                              <td className="px-6 py-4 whitespace-nowrap text-md text-gray-800  hover:text-[#22646b] hover:font-semibold hover:underline">
+                              <td className="px-6 py-4 whitespace-nowrap text-md text-gray-800 ">
                             <div  className="cursor-pointer">
                                 {elem.network_offer_id}
                             </div>
@@ -127,7 +126,7 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-end text-md font-medium hover:text-[#22646b] hover:font-semibold hover:underline">
                               <div  className="cursor-pointer">
-                                {elem.payout_amount === 0 ? "Revenue Share "+elem.payout_percentage +"%":"$"+ elem.payout_amount}
+                                {elem.payout_amount === 0 ? elem.payout_percentage +"%":"$"+ elem.payout_amount}
                             </div>
                               </td>
                           </tr>

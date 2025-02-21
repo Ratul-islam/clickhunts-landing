@@ -102,6 +102,8 @@ const ReadyToPertner = () => {
             gap: 3rem;
             margin-top: 2rem;
             perspective: 1000px;
+                margin: auto;
+    max-width: 900px;
         }
 
         .partner-card {
@@ -140,8 +142,8 @@ const ReadyToPertner = () => {
         }
 
         .icon-container {
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto 2.5rem;
             position: relative;
             transition: transform 0.3s ease;
@@ -152,7 +154,7 @@ const ReadyToPertner = () => {
         }
 
         .partner-title {
-            font-size: 2.25rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #048998;
             margin-bottom: 1.5rem;
@@ -160,9 +162,9 @@ const ReadyToPertner = () => {
         }
 
         .partner-description {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: #4a5568;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             line-height: 1.7;
         }
 
@@ -170,7 +172,7 @@ const ReadyToPertner = () => {
             display: inline-block;
             background: linear-gradient(135deg, #048998 0%, #037885 100%);
             color: white;
-            padding: 1.25rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 1rem;
             text-decoration: none;
             font-weight: 600;
