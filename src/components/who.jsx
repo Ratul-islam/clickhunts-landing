@@ -99,14 +99,14 @@ const CompanyOverview = () => {
   return (
     <div className="bg-white">
       <div className="max-w-6xl mx-auto p-8">
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">WHO IS CLICKHUNTS</h1>
           <p className="text-xl text-gray-600 max-w-3xl">
             A global performance marketing network connecting premium advertisers with
             high-quality publishers, delivering exceptional results through innovative
             tracking technology and dedicated support.
           </p>
-        </div>
+        </div> */}
 
 
 

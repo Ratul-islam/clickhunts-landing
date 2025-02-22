@@ -9,6 +9,21 @@ const ReadyToPertner = () => {
         </div>
 
         <div class="partner-grid">
+        <div class="partner-card">
+                <div class="icon-container">
+                    <svg viewBox="0 0 200 200" width="100%" height="100%">
+                        <path d="M40 160 L 40 120 L 80 80 L 120 120 L 160 40" stroke="#048998" stroke-width="8" fill="none" stroke-linecap="round"/>
+                        <circle cx="160" cy="40" r="12" fill="#048998"/>
+                    </svg>
+                </div>
+                <h2 class="partner-title">Affiliate Partners</h2>
+                <p class="partner-description">Earn more from your traffic by promoting brands people love.</p>
+                <a href="/" class="apply-button">I'm Ready to Apply Now</a>
+                <br/>
+                <a href="/" class="learn-more">Tell Me More</a>
+            </div>
+
+
             <div class="partner-card">
                 <div class="icon-container">
                     <svg viewBox="0 0 200 200" width="100%" height="100%">
@@ -25,19 +40,7 @@ const ReadyToPertner = () => {
                 <a href="/" class="learn-more">Tell Me More</a>
             </div>
 
-            <div class="partner-card">
-                <div class="icon-container">
-                    <svg viewBox="0 0 200 200" width="100%" height="100%">
-                        <path d="M40 160 L 40 120 L 80 80 L 120 120 L 160 40" stroke="#048998" stroke-width="8" fill="none" stroke-linecap="round"/>
-                        <circle cx="160" cy="40" r="12" fill="#048998"/>
-                    </svg>
-                </div>
-                <h2 class="partner-title">Affiliate Partners</h2>
-                <p class="partner-description">Earn more from your traffic by promoting brands people love.</p>
-                <a href="/" class="apply-button">I'm Ready to Apply Now</a>
-                <br/>
-                <a href="/" class="learn-more">Tell Me More</a>
-            </div>
+            
         </div>
         <style jsx>{`
         * {
@@ -57,12 +60,12 @@ const ReadyToPertner = () => {
         .readyContainer {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 2rem 2rem;
         }
 
         .readyHeader {
             text-align: center;
-            margin-bottom: 5rem;
+            margin-bottom: rem;
             position: relative;
         }
 

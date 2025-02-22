@@ -36,7 +36,7 @@ const Home = () => {
       <TestimonialsTable/>
       <PartnersShowcase/>
       <EnhancedPaymentMethods/>
-      <OffersList/>
+      {/* <OffersList/> */}
       <AnimatedBanner/>
     </div>
   );

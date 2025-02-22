@@ -78,7 +78,7 @@ const StatsBanner = () => {
     <div className="w-full py-8 md:py-12 lg:py-14" style={{ backgroundColor: '#F8F8FB' }}>
       <div className="max-w-[90%] md:max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto px-4">
         {/* Mobile Layout (< 768px) */}
-        <div className="grid grid-cols-2 gap-6 md:hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:hidden">
           {stats.map((stat, index) => (
             <div 
               key={index} 

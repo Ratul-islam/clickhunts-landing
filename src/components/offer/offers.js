@@ -12,7 +12,7 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
     setLoading(true);
     try {
       const fetchedData = await api.post(
-        `/networks/offerstable?page=${currentPage}&page_size=50&order_field=&order_direction=&relationship=ruleset&relationship=tracking_domain&relationship=account_manager&relationship=sales_manager`,
+        `/networks/offerstable?page=${currentPage}&page_size=50&order_field=&order_direction=desc&relationship=ruleset&relationship=tracking_domain&relationship=account_manager&relationship=sales_manager`,
         {
           filters: {
             offer_status: "active",

@@ -107,7 +107,7 @@ const TestimonialsTable = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            What Our <span style={{ color: '#048998' }}>Partners</span> Say
+            <span style={{ color: '#048998' }}>Partners</span> Testimonial's
           </h2>
           <p className="text-gray-600 text-lg">
             Join the growing community of successful affiliates
@@ -141,7 +141,9 @@ const TestimonialsTable = () => {
               boxShadow: '0 4px 12px rgba(4, 137, 152, 0.25)'
             }}
           >
+            <a href="https://www.affpaying.com/clickhunts">
             View More Reviews
+            </a>
           </button>
         </div>
       </div>

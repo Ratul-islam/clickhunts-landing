@@ -24,8 +24,7 @@ const PowerfullIntegration = () => {
                     <li class="integration-item">Google Ads</li>
                     <li class="integration-item">TikTok Ads</li>
                     <li class="integration-item">Taboola Ads</li>
-                    <li class="integration-item">Pinterest Ads</li>
-                    <li class="integration-item">MGID Ads</li>
+                    <li class="integration-item">Native Ads</li>
                 </ul>
             </div>
 
@@ -58,6 +57,7 @@ const PowerfullIntegration = () => {
                     <li class="integration-item">IPQualityScore</li>
                     <li class="integration-item">Advanced Analytics</li>
                     <li class="integration-item">Campaign Tracking</li>
+                    <li class="integration-item">Google Analytics</li>
                 </ul>
             </div>
 
@@ -70,10 +70,10 @@ const PowerfullIntegration = () => {
                 </div>
                 <h3 class="integration-title">Performance Tracking</h3>
                 <ul class="integration-list">
-                    <li class="integration-item">Smart Traffic Optimization</li>
-                    <li class="integration-item">Real-Time Performance Reports</li>
-                    <li class="integration-item">Multi-Stage Rewards System</li>
-                    <li class="integration-item">Partner Relationship Management</li>
+                    <li class="integration-item">Traffic Optimization</li>
+                    <li class="integration-item">Real-Time Reports</li>
+                    <li class="integration-item">Multi-Stage Rewards</li>
+                    <li class="integration-item">Partner's Management</li>
                     <li class="integration-item">Advanced Tracking Solutions</li>
                 </ul>
             </div>

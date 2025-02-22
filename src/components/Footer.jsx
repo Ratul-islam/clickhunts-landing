@@ -10,7 +10,7 @@ const Footer = () => {
             <img src={mainLogo} alt="logo" class='w-36' />
           </a>
           <div class="mt-6">
-            <p class="text-gray-600 leading-relaxed text-sm">Click Hunts (CH) emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.</p>
+            <p class="text-gray-600 leading-relaxed text-md text-justify">Click Hunts (CH) emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.</p>
           </div>
           <ul class="mt-10 flex space-x-5">
             <li>
@@ -67,19 +67,19 @@ const Footer = () => {
 
           <ul class="mt-6 space-y-4">
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Web Development</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Web Development</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Pricing</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Pricing</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Support</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Support</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Client Portal</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Client Portal</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Resources</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Resources</a>
             </li>
           </ul>
         </div>
@@ -89,19 +89,19 @@ const Footer = () => {
 
           <ul class="space-y-4 mt-6">
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>About us</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>About us</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Careers</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Careers</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Blog</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Blog</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Portfolio</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Portfolio</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Events</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Events</a>
             </li>
           </ul>
         </div>
@@ -111,19 +111,19 @@ const Footer = () => {
 
           <ul class="space-y-4 mt-6">
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>FAQ</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>FAQ</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Partners</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Partners</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Sitemap</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Sitemap</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Contact</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Contact</a>
             </li>
             <li>
-              <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>News</a>
+              <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>News</a>
             </li>
           </ul>
         </div>
@@ -131,20 +131,20 @@ const Footer = () => {
 
       <hr class="mt-10 mb-6 border-gray-300" />
 
-      <div class="flex flex-wrap max-md:flex-col gap-4">
-        <ul class="md:flex md:space-x-6 max-md:space-y-2">
+      <div class="flex justify-center">
+        {/* <ul class="md:flex md:space-x-6 max-md:space-y-2">
           <li>
-            <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Terms of Service</a>
+            <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Terms of Service</a>
           </li>
           <li>
-            <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Privacy Policy</a>
+            <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Privacy Policy</a>
           </li>
           <li>
-            <a href='/' class='hover:text-gray-800 text-gray-600 text-sm'>Security</a>
+            <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Security</a>
           </li>
-        </ul>
+        </ul> */}
 
-        <p class='text-gray-600 text-sm md:ml-auto'>© ClickHunst. All rights reserved.</p>
+        <p class='text-gray-600 text-md md:ml-auto'>© ClickHunst. All rights reserved.</p>
       </div>
     </footer>
     );

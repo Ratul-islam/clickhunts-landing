@@ -36,7 +36,7 @@ const EnhancedPaymentMethods = () => {
       description: 'International money transfers',
       minPayout: '20 USD',
       processingTime: '1-2 business days',
-      logo: '/assets/payment/wise-1.svg'
+      logo: '/assets/payment/wise-2.png'
     },
     {
       name: 'Bank Transfer',
@@ -44,7 +44,7 @@ const EnhancedPaymentMethods = () => {
       description: 'Direct bank-to-bank transfers',
       minPayout: '500 USD',
       processingTime: '2-5 business days',
-      logo: '/assets/payment/bank-transfer.svg'
+      logo: '/assets/payment/bank.png'
     },
     {
       name: 'WebMoney',
@@ -61,7 +61,7 @@ const EnhancedPaymentMethods = () => {
       description: 'Stablecoin digital currency',
       minPayout: '100 USDT',
       processingTime: '10-30 minutes',
-      logo: '/assets/payment/tether.png'
+      logo: '/assets/payment/usdt.png'
     },
     {
       name: 'Bitcoin',
@@ -122,7 +122,7 @@ const EnhancedPaymentMethods = () => {
                       <img
                         src={method.logo}
                         alt={`${method.name} logo`}
-                        className="max-h-full max-w-full object-contain"
+                        className="h-[40px]"
                       />
                     </div>
 
