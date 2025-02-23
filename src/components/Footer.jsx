@@ -2,6 +2,7 @@
 import mainLogo from "../assets/ClickHunts.png";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
     return (
       <footer class="font-sans tracking-wide bg-gray-50 px-10 xl:px-32 pt-12 pb-6">
       <div class="flex flex-wrap justify-between gap-10">
@@ -143,8 +144,8 @@ const Footer = () => {
             <a href='/' class='hover:text-gray-800 text-gray-600 text-md'>Security</a>
           </li>
         </ul> */}
-
-        <p class='text-gray-600 text-md md:ml-auto'>© ClickHunst. All rights reserved.</p>
+{}
+        <p class='text-gray-600 text-md'>© ClickHunst. All rights reserved {currentYear}.</p>
       </div>
     </footer>
     );

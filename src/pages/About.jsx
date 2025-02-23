@@ -1,4 +1,4 @@
-import React from 'react';
+import img from '../assets/home.jpg';
 
 const About = () => {
   return (
@@ -347,7 +347,7 @@ const About = () => {
                     <p>The mission of CH is straightforward for an affiliate network: cultivate an environment where both advertisers and publishers can grow and thrive simultaneously. The core objective is to create a symbiotic relationship, ensuring the success of both parties within the network.</p>
                 </div>
                 <div class="about-image">
-                    <img src="/api/placeholder/600/400" alt="Team Meeting"/>
+                    <img src={img} alt="Team Meeting"/>
                 </div>
             </div>
         </div>

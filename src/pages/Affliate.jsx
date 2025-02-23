@@ -14,7 +14,7 @@ const Affliate = () => {
         </section>
 
         <section class="features-section">
-            <img src="https://clickhunts.com/wp-content/uploads/2024/01/marketing-phone.jpg" alt="Marketing Strategy" class="features-image"/>
+            <img src="/assets/home/clickhunts-marketing-plan.png" alt="Marketing Strategy" class="features-image"/>
             
             <div class="features-list">
                 <div class="feature-item">
