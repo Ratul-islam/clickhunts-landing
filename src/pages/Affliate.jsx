@@ -3,7 +3,7 @@ import "../css/affliate.css"
 
 const Affliate = () => {
   return (
-    <main class="main-content">
+    <main class="main-content mt-10">
       
         <section class="hero-section">
             <h1 class="hero-title">Affiliate Experience at Click Hunts Network</h1>

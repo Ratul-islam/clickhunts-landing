@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, memo } from 'react';
 import { motion, useSpring } from 'framer-motion';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 
+// Custom hook using requestAnimationFrame for smooth animation updates
 const useAnimationFrame = (callback) => {
   const requestRef = useRef();
   const previousTimeRef = useRef();
@@ -21,46 +22,49 @@ const useAnimationFrame = (callback) => {
   }, [callback]);
 };
 
-const FloatingParticle = ({ x, y, radius, mouse }) => {
+const FloatingParticle = memo(({ x, y, radius, mouse }) => {
   const baseX = useRef(x);
   const baseY = useRef(y);
   const position = useRef({ x: 0, y: 0 });
   const velocity = useRef({ x: 0, y: 0 });
   const timeOffset = useRef(Math.random() * Math.PI * 2);
-  
-  // Smoother springs with lower stiffness
+
+  // Use springs for smooth transitions
   const springX = useSpring(0, { stiffness: 25, damping: 30 });
   const springY = useSpring(0, { stiffness: 25, damping: 30 });
 
-  // Increase speed multiplier for faster movement
+  // Increase randomness for pronounced drift
   const params = useMemo(() => ({
-    speedMultiplier: 0.25 + Math.random() * 0.15,
-    amplitude: 20 + Math.random() * 10,
+    speedMultiplier: 0.8 + Math.random() * 0.4,  // [0.8, 1.2]
+    amplitude: 50 + Math.random() * 50,            // [50, 100]
     phaseOffset: Math.random() * Math.PI * 2,
   }), []);
 
   useAnimationFrame(() => {
     const time = Date.now() * 0.001 * params.speedMultiplier + timeOffset.current;
     
-    // Smooth autonomous movement
-    const targetX = Math.sin(time + params.phaseOffset) * params.amplitude;
-    const targetY = Math.cos(time * 0.8) * params.amplitude;
+    // Compute a dynamic target position
+    const targetX = Math.sin(time * 1.5 + params.phaseOffset) * params.amplitude;
+    const targetY = Math.cos(time * 1.5) * params.amplitude;
 
-    // Mouse interaction
-    const dx = mouse.x - (baseX.current + position.current.x);
-    const dy = mouse.y - (baseY.current + position.current.y);
+    // Compute current absolute position
+    const currentX = baseX.current + position.current.x;
+    const currentY = baseY.current + position.current.y;
+    const dx = mouse.x - currentX;
+    const dy = mouse.y - currentY;
     const distance = Math.sqrt(dx * dx + dy * dy);
     const maxDistance = 400;
-
+    
+    // If mouse is near, apply repulsion for immediate interaction
     if (distance < maxDistance && distance !== 0) {
-      const force = (1 - distance / maxDistance) * 40;
-      position.current.x += (dx / distance) * force * 0.01;
-      position.current.y += (dy / distance) * force * 0.01;
+      const force = (1 - distance / maxDistance) * 60;
+      position.current.x -= (dx / distance) * force * 0.1;
+      position.current.y -= (dy / distance) * force * 0.1;
     }
 
-    // Smooth movement
-    velocity.current.x = (targetX - position.current.x) * 0.05;
-    velocity.current.y = (targetY - position.current.y) * 0.05;
+    // Update velocity toward target for smooth drift
+    velocity.current.x = (targetX - position.current.x) * 0.2;
+    velocity.current.y = (targetY - position.current.y) * 0.2;
     
     position.current.x += velocity.current.x;
     position.current.y += velocity.current.y;
@@ -79,11 +83,10 @@ const FloatingParticle = ({ x, y, radius, mouse }) => {
         y: springY,
         left: baseX.current,
         top: baseY.current,
-        filter: "blur(15px)",
+        filter: "blur(8px)", // Reduced blur for smoother rendering
+        willChange: "transform",
       }}
-      animate={{
-        scale: [1, 1.03, 1],
-      }}
+      animate={{ scale: [1, 1.03, 1] }}
       transition={{
         duration: 6 + Math.random() * 2,
         repeat: Infinity,
@@ -91,32 +94,34 @@ const FloatingParticle = ({ x, y, radius, mouse }) => {
       }}
     />
   );
-};
+});
 
 const InteractiveHero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  // Set initial mouse position at screen center for immediate interaction
+  const [mousePosition, setMousePosition] = useState({ 
+    x: window.innerWidth / 2, 
+    y: window.innerHeight / 2 
+  });
   const containerRef = useRef(null);
   
-  // Create a spring for the interactive background
+  // Optional background parallax spring
   const backgroundMotion = useSpring({ x: 0, y: 0 }, { stiffness: 50, damping: 30 });
   
-  // Update background spring based on mouse position
   useEffect(() => {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
-    const factor = 0.05; // adjust sensitivity as needed
+    const factor = 0.05;
     backgroundMotion.set({
       x: (mousePosition.x - centerX) * factor,
       y: (mousePosition.y - centerY) * factor,
     });
   }, [mousePosition, backgroundMotion]);
   
-  // Generate base particles with better distribution
+  // Generate base particles (using useMemo to avoid re-calculations)
   const baseParticles = useMemo(() => {
     const cols = 4;
     const rows = 3;
     const particles = [];
-    
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
         particles.push({
@@ -130,21 +135,19 @@ const InteractiveHero = () => {
     return particles;
   }, []);
 
-  // Generate additional particles on the top side
   const topParticles = useMemo(() => {
-    const count = 6; // Adjust count as needed
+    const count = 6;
     return Array.from({ length: count }).map((_, i) => ({
       id: `top-${i}`,
       x: Math.random() * window.innerWidth,
-      y: Math.random() * (window.innerHeight / 2), // top half of the screen
+      y: Math.random() * (window.innerHeight / 2),
       radius: 45 + Math.random() * 35,
     }));
   }, []);
 
-  // Combine all particles
   const particles = useMemo(() => [...baseParticles, ...topParticles], [baseParticles, topParticles]);
 
-  // Throttled mouse move handler attached to containerRef
+  // Throttled mouse move handler using requestAnimationFrame
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -153,8 +156,6 @@ const InteractiveHero = () => {
       cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(() => {
         const rect = container.getBoundingClientRect();
-        if (!rect) return;
-        
         setMousePosition({
           x: e.clientX - rect.left,
           y: e.clientY - rect.top,
@@ -169,19 +170,15 @@ const InteractiveHero = () => {
     };
   }, []);
 
-  // Chart data with smooth curve
   const chartData = useMemo(() => 
     Array.from({ length: 30 }).map((_, i) => ({
-      value: 75 + Math.sin(i / 5) * 15 + Math.sin(i / 3) * 5
-    }))
-  , []);
+      value: 75 + Math.sin(i / 5) * 15 + Math.sin(i / 3) * 5,
+    })), []
+  );
 
   return (
-    <div 
-      ref={containerRef} 
-      className="relative min-h-screen overflow-hidden"
-    >
-      {/* Interactive Background Layer */}
+    <div ref={containerRef} className="relative min-h-[calc(100vh+100px)] max-w-[100vw] overflow-hidden">
+      {/* Background Parallax Layer */}
       <motion.div
         className="absolute inset-0 z-[-1] bg-gradient-to-br from-indigo-50 to-white"
         style={{
@@ -189,7 +186,7 @@ const InteractiveHero = () => {
           y: backgroundMotion.y,
         }}
       />
-
+      
       {/* Floating Particles */}
       {particles.map((particle) => (
         <FloatingParticle
@@ -202,7 +199,7 @@ const InteractiveHero = () => {
       ))}
 
       {/* Hero Content */}
-      <div className="relative mx-auto px-8 md:px-24 py-16 lg:py-24">
+      <div className="relative mx-auto px-8 md:px-24 py-20 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
@@ -335,7 +332,7 @@ const InteractiveHero = () => {
                   ].map((metric, index) => (
                     <motion.div
                       key={index}
-                      className="bg-gray-50/80 backdrop-blur-sm rounded-lg p-4"
+                      className="bg-white/80 backdrop-blur-sm rounded-lg p-4"
                       whileHover={{ y: -2 }}
                     >
                       <p className="text-gray-600 text-sm">{metric.label}</p>

@@ -18,7 +18,7 @@ const EnhancedPaymentMethods = () => {
       name: 'Payoneer',
       type: 'Digital Wallet',
       description: 'Global payment platform for professionals',
-      minPayout: '50 USD',
+      minPayout: '100 USD',
       processingTime: 'Instant to 2 hours',
       logo: '/assets/payment/payoneer.png'
     },
@@ -34,7 +34,7 @@ const EnhancedPaymentMethods = () => {
       name: 'Wise',
       type: 'Money Transfer',
       description: 'International money transfers',
-      minPayout: '20 USD',
+      minPayout: '100 USD',
       processingTime: '1-2 business days',
       logo: '/assets/payment/wise-2.png'
     },
@@ -50,7 +50,7 @@ const EnhancedPaymentMethods = () => {
       name: 'WebMoney',
       type: 'E-Currency',
       description: 'Electronic payment system',
-      minPayout: '50 USD',
+      minPayout: '100 USD',
       processingTime: 'Instant',
       
       logo: '/assets/payment/webmoney.png'
@@ -59,7 +59,7 @@ const EnhancedPaymentMethods = () => {
       name: 'USDT',
       type: 'Cryptocurrency',
       description: 'Stablecoin digital currency',
-      minPayout: '100 USDT',
+      minPayout: '500 USDT',
       processingTime: '10-30 minutes',
       logo: '/assets/payment/usdt.png'
     },
@@ -67,7 +67,7 @@ const EnhancedPaymentMethods = () => {
       name: 'Bitcoin',
       type: 'Cryptocurrency',
       description: 'Digital cryptocurrency payments',
-      minPayout: '0.001 BTC',
+      minPayout: '500 USD',
       processingTime: '1-2 hours',
       logo: '/assets/payment/bitcoin.jpg'
     }
