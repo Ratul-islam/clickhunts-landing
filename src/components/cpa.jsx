@@ -17,7 +17,7 @@ const PremiumNetworkSection = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden">
+    <div className="relative bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 z-0">
         <div className="absolute w-full h-full">
@@ -38,7 +38,7 @@ const PremiumNetworkSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side: Network Visualization */}
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>

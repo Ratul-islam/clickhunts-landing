@@ -12,7 +12,7 @@ const WhyChoose = () => {
         </p>
 
         <div class="features-grid">
-            <div class="feature-item">
+            <div class="feature-item-offer">
                 <h3 class="feature-title">
                     <span class="feature-icon">💎</span>
                     Premium Campaigns & Verticals
@@ -28,7 +28,7 @@ const WhyChoose = () => {
                 </ul>
             </div>
             
-            <div class="feature-item">
+            <div class="feature-item-offer">
                 <h3 class="feature-title">
                     <span class="feature-icon">📊</span>
                     Advanced Technology
@@ -44,7 +44,7 @@ const WhyChoose = () => {
                 </ul>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item-offer">
                 <h3 class="feature-title">
                     <span class="feature-icon">🚀</span>
                     Partner Success Program
@@ -60,7 +60,7 @@ const WhyChoose = () => {
                 </ul>
             </div>
 
-            <div class="feature-item">
+            <div class="feature-item-offer">
                 <h3 class="feature-title">
                     <span class="feature-icon">💰</span>
                     Competitive Advantages

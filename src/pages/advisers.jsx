@@ -12,7 +12,7 @@ const Advisers = () => {
     </section>
 
 
-    <main class="main-content">
+    <main class="main-content mb-[40px]">
         <div class="title-section">
             <h2>Click Hunts Network</h2>
             <h3>The Advertiser Experience</h3>
@@ -45,8 +45,8 @@ const Advisers = () => {
             </div>
         </div>
 
-        <div class="cta-section">
-            <h2>Ready to Start Growing?</h2>
+        <div class="cta-section m-auto text-[#000]">
+            <h2 className='font-bold'>Ready to Start Growing?</h2>
             <p>Join ClickHunts today and transform your advertising strategy.</p>
             <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button">GET STARTED NOW</a>
         </div>

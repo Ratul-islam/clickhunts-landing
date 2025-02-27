@@ -19,7 +19,7 @@ const EnhancedPaymentMethods = () => {
       type: 'Digital Wallet',
       description: 'Global payment platform for professionals',
       minPayout: '100 USD',
-      processingTime: 'Instant to 2 hours',
+      processingTime: 'Instant',
       logo: '/assets/payment/payoneer.png'
     },
     {
@@ -70,6 +70,22 @@ const EnhancedPaymentMethods = () => {
       minPayout: '500 USD',
       processingTime: '1-2 hours',
       logo: '/assets/payment/bitcoin.jpg'
+    },
+    {
+      name: 'Direct Deposit (ACH)',
+      type: 'Traditional',
+      description: 'Direct bank-to-bank transfers',
+      minPayout: '100 USD',
+      processingTime: '1-2 hours',
+      logo: '/assets/payment/ahc.png'
+    },
+    {
+      name: 'Capitalist',
+      type: 'Traditional',
+      description: 'Direct bank-to-bank transfers',
+      minPayout: '100 USD',
+      processingTime: '1-2 hours',
+      logo: '/assets/payment/capitalist.png'
     }
   ];
 

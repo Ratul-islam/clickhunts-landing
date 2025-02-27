@@ -1,5 +1,6 @@
 import React from 'react'
 import "../css/affliate.css"
+import CTA from '../components/cta'
 
 const Affliate = () => {
   return (
@@ -51,13 +52,7 @@ const Affliate = () => {
             </div>
         </section>
 
-        <section class="join-section">
-            <h2 class="join-title">Join ClickHunts Today</h2>
-            <div class="join-buttons">
-                <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="join-button affiliate-button">BECOME AN AFFILIATE</a>
-                <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="join-button advertiser-button">BECOME AN ADVERTISER</a>
-            </div>
-        </section>
+        <CTA/>
     </main>
   )
 }

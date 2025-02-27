@@ -39,7 +39,7 @@
     margin-bottom: 50px;
 }
 
-.feature-item {
+.feature-item-offer {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -94,7 +94,6 @@
 
 .cta-section {
     flex: 1;
-    max-width: 450px;
     text-align: center;
     padding: 35px;
     background: white;

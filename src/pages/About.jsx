@@ -1,8 +1,9 @@
 import img from '../assets/home.jpg';
+import CTA from '../components/cta';
 
 const About = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <div className="py-12">
         <style jsx>{`
         :root {
             --primary: #048998;
@@ -115,7 +116,7 @@ const About = () => {
 
         .hero-title {
             font-size: 2.5em;
-            margin-bottom: 20px;
+            // margin-bottom: 20px;
         }
 
         .hero-subtitle {
@@ -198,45 +199,6 @@ const About = () => {
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* CTA Section */
-        .cta {
-            padding: 60px 0;
-            background: var(--primary);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 40px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .primary-button {
-            background: white;
-            color: var(--primary);
-        }
-
-        .secondary-button {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
 
         /* Mobile Menu */
         .mobile-nav-toggle {
@@ -282,11 +244,6 @@ const About = () => {
 
             .about-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                padding: 0 20px;
             }
         }
 
@@ -353,16 +310,7 @@ const About = () => {
         </div>
     </section>
 
-    <section class="cta">
-        <div class="aboutContainer">
-            <h2>Ready to Get Started?</h2>
-            <p>Join our network and start growing your business today.</p>
-            <div class="cta-buttons">
-                <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="cta-button primary-button">BECOME AN AFFILIATE</a>
-                <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button secondary-button">BECOME AN ADVERTISER</a>
-            </div>
-        </div>
-    </section>
+    <CTA/>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const GetStartedSection = () => {
   ];
 
   return (
-    <div className="py-20 bg-gradient-to-b from-[#048998]/5 to-white">
+    <div className="py-10 bg-gradient-to-b from-[#048998]/5 to-white">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-20">
           <h1 className="text-4xl font-bold text-gray-800 mb-4">

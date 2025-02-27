@@ -58,6 +58,8 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
   //   }
   //   return words;
   // };
+
+
   return (
     <div>
       <div className="flex-wrap grid grid-cols-1 gap-6 mt-12">
@@ -119,9 +121,23 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-md text-gray-800 hover:text-[#22646b] hover:font-semibold hover:underline">
                               <div  className="cursor-pointer">
-                                {elem?.relationship.ruleset.countries.map(el=>{
-                                  return <div>{el.label}</div>
-                                })}
+                              {
+  elem?.relationship.ruleset.countries.map((el, index) => {
+    if (elem?.relationship.ruleset.countries.length > 2) {
+      if (index === 0) {
+        return (
+          <>
+            <div>{elem?.relationship.ruleset.countries[0].label}</div>
+            <div>{elem?.relationship.ruleset.countries[1].label} ...</div>
+          </>
+        );
+      }
+    } else {
+      return <div key={index}>{el.label}</div>;
+    }
+  })
+}
+
                             </div>
                               </td>
                               <td className="px-6 py-4 whitespace-nowrap text-end text-md font-medium hover:text-[#22646b] hover:font-semibold hover:underline">

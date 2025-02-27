@@ -177,7 +177,7 @@ const InteractiveHero = () => {
   );
 
   return (
-    <div ref={containerRef} className="relative min-h-[calc(100vh+100px)] max-w-[100vw] overflow-hidden">
+    <div ref={containerRef} className="relative max-w-[100vw] overflow-hidden">
       {/* Background Parallax Layer */}
       <motion.div
         className="absolute inset-0 z-[-1] bg-gradient-to-br from-indigo-50 to-white"

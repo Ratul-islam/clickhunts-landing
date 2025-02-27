@@ -8,7 +8,7 @@ const TopCountries = () => {
       status: "Premium Market",
       verticals: "Finance & Insurance",
       tags: ["CC Submit", "Finance","Health", "E-Commerce", "Email Submit", "Loan","Real Estate"],
-      link: "/assets/flags/usa.png"
+      link: "/assets/flags/usa.webp"
     },
     {
       name: "Canada",
@@ -16,7 +16,7 @@ const TopCountries = () => {
       status: "High Value",
       verticals: "Health & Wellness",
       tags: ["Nutra", "CBD", "Insurance", "E-Commerce", "Health", "CBD", "Sweepstakes", "Survey"],
-      link: "/assets/flags/canada.png"
+      link: "/assets/flags/canada.webp"
 
     },
     {
@@ -34,7 +34,7 @@ const TopCountries = () => {
       status: "Premium Market",
       verticals: "Finance & Gaming",
       tags: ["E-Commerce", "Bizopp", "Email Submit", "Health"],
-      link: "/assets/flags/kingdom.png"
+      link: "/assets/flags/kingdom.webp"
 
     },
     {
@@ -43,7 +43,7 @@ const TopCountries = () => {
       status: "High ROI",
       verticals: "Lifestyle & Finance",
       tags: ["Bizoop", "Sweepstakes", "Health", "E-Commerce", "CBD"],
-      link: "/assets/flags/aus.png"
+      link: "/assets/flags/aus.webp"
 
     },
     {
@@ -52,7 +52,7 @@ const TopCountries = () => {
       status: "Emerging",
       verticals: "Education & Finance",
       tags: ["Email Submit", "Health", "E-Commerce", "Sweepstakes"],
-      link: "/assets/flags/new.png"
+      link: "/assets/flags/new.webp"
 
     }
   ];
@@ -75,6 +75,7 @@ const TopCountries = () => {
                   src={country.link}
                   alt={`${country.name} flag`}
                   className="flag"
+                  loading='lazy'
                 />
                 {country.name}
               </div>
