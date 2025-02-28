@@ -31,7 +31,7 @@ const TopCountries = () => {
     {
       name: "United Kingdom",
       population: "67M+ Population",
-      status: "Premium Market",
+      status: "High ROI",
       verticals: "Finance & Gaming",
       tags: ["E-Commerce", "Bizopp", "Email Submit", "Health"],
       link: "/assets/flags/kingdom.webp"

@@ -11,6 +11,7 @@ import Advisers from "./pages/advisers";
 import OfferHome from "./offerHome";
 import OfferDetails from "./pages/offerDetails";
 import About from "./pages/About";
+import Terms from "./pages/terms";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/advertisers" element={<Advisers />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/about" element={<About />} />
+      <Route path="/affiliater-terms-and-conditions" element={<Terms />} />
       <Route path="*" element={<NotFound />} />
       <Route path='/offer/' element={<OfferHome />}/>
       <Route path='/:id/:offerId' element={<OfferDetails />}/>

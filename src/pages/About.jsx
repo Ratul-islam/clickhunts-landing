@@ -2,9 +2,9 @@ import img from '../assets/home.jpg';
 import CTA from '../components/cta';
 
 const About = () => {
-  return (
-    <div className="py-12">
-        <style jsx>{`
+    return (
+        <div className="py-12 bg-white">
+            <style jsx>{`
         :root {
             --primary: #048998;
             --primary-dark: #037885;
@@ -127,7 +127,7 @@ const About = () => {
 
         /* Features Section */
         .features {
-            padding: 80px 0;
+            padding: 40px 0;
             background: white;
         }
 
@@ -155,7 +155,7 @@ const About = () => {
         }
 
         .feature-card {
-            background: var(--bg-light);
+            // background: var(--bg-light);
             padding: 30px;
             border-radius: 12px;
             text-align: center;
@@ -183,7 +183,7 @@ const About = () => {
         /* About Section */
         .about {
             padding: 80px 0;
-            background: var(--bg-light);
+            background:white;
         }
 
         .about-grid {
@@ -196,7 +196,6 @@ const About = () => {
         .about-image img {
             width: 100%;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
 
@@ -257,62 +256,65 @@ const About = () => {
             }
         }
         `}
-        
-    </style>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="font-bold text-white">Click Hunts Network, LLC</h1>
-            <p class="hero-subtitle">Established in 2023, we're committed to revolutionizing affiliate marketing through innovation, transparency, and performance-driven results.</p>
+            </style>
+
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="font-bold text-white">ClickHunts Network, LLC</h1>
+                    <p class="hero-subtitle">Established in 2023, we're committed to revolutionizing affiliate marketing through innovation, transparency, and performance-driven results.</p>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="aboutContainer">
+                    <div class="section-title">
+                        <h2>Why Choose ClickHunts</h2>
+                        <p>Innovative solutions for modern affiliate marketing</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="feature-title">Proprietary Tracking</h3>
+                            <p>Advanced tracking solution meticulously developed with industry expertise</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">👥</div>
+                            <h3 class="feature-title">Dedicated Support</h3>
+                            <p>Personal account managers to optimize your campaigns</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">💰</div>
+                            <h3 class="feature-title">Simplified Payments</h3>
+                            <p>Straightforward payment process with no hidden fees</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="aboutContainer">
+                    <div class="about-grid">
+                        <div>
+                            <h2 className='font-bold text-xl'>Our Mission</h2>
+                            <p>ElickHunts (CH) emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.
+                                <br />
+                                <br />
+                                The mission of CH is straightforward for an affiliate network: cultivate an environment where both advertisers and publishers can grow and thrive simultaneously. The core objective is to create a symbiotic relationship, ensuring the success of both parties within the network.</p>
+                        </div>
+                        <div class="about-image">
+                            <img src={img} alt="Team Meeting" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <CTA />
         </div>
-    </section>
-
-    <section class="features">
-        <div class="aboutContainer">
-            <div class="section-title">
-                <h2>Why Choose Click Hunts</h2>
-                <p>Innovative solutions for modern affiliate marketing</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3 class="feature-title">Proprietary Tracking</h3>
-                    <p>Advanced tracking solution meticulously developed with industry expertise</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">Dedicated Support</h3>
-                    <p>Personal account managers to optimize your campaigns</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Simplified Payments</h3>
-                    <p>Straightforward payment process with no hidden fees</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about">
-        <div class="aboutContainer">
-            <div class="about-grid">
-                <div>
-                    <h2>Our Mission</h2>
-                    <p>The mission of CH is straightforward for an affiliate network: cultivate an environment where both advertisers and publishers can grow and thrive simultaneously. The core objective is to create a symbiotic relationship, ensuring the success of both parties within the network.</p>
-                </div>
-                <div class="about-image">
-                    <img src={img} alt="Team Meeting"/>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <CTA/>
-    </div>
-  );
+    );
 };
 
 export default About;

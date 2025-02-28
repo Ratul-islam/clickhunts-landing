@@ -7,11 +7,18 @@ const Affliate = () => {
     <main class="main-content mt-10">
       
         <section class="hero-section">
-            <h1 class="hero-title">Affiliate Experience at Click Hunts Network</h1>
+            <h1 class="hero-title">Affiliate Experience at ClickHunts Network</h1>
             <p class="hero-text">
-                Click Hunts Network understands the needs of affiliates, so we simplify the process with the highest CPA rates, guaranteed rate-matching, and punctual payments. We offer the flexibility to create custom campaigns, access to a diverse range of offers, including exclusive CH-only deals, and dedicated Account Managers for personalized assistance.
+            Click Hunts Network understands the needs of affiliates, so we simplify the process with the highest CPA rates, guaranteed rate-matching, and punctual payments. We offer the flexibility to create custom campaigns, access to a diverse range of offers, including exclusive CH-only deals, and dedicated Account Managers for personalized assistance. Our solutions are scalable to accommodate your evolving requirements.
+<br/>
+<br/>
+Our success is intricately tied to yours, and at CH, we are committed to boosting your bottom line. This involves not only matching other network’s payouts but also increasing your rates as your volume grows and expediting your pay schedule. Additionally, we aim to enhance your market reach and differentiation by assisting you in developing customized campaigns managed by your dedicated Account Manager.
+<br/>
+<br/>
+
+Our aspiration is for Click Hunts Network to be more than just a convenient option for your performance-based marketing needs – we want it to be your exclusive destination. Let’s embark on this journey together; get started with us today!
             </p>
-            <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="cta-button">AFFILIATE SIGNUP</a>
+            <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="bg-[#048998] text-white px-8 py-4 rounded-sm" >AFFILIATE SIGNUP</a>
         </section>
 
         <section class="features-section">

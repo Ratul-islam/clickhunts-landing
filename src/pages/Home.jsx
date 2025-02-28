@@ -10,10 +10,7 @@ import PowerfullIntegration from "../components/powerfull-integration";
 import CompanyOverview from "../components/who";
 import ReadyToPertner from "../components/ready";
 import PremiumNetworkSection from "../components/cpa";
-import Customers from "../components/customers";
 import AdvertiserSection from "../components/advpub";
-import PublisherSection from "../components/publisher";
-import OffersList from "../components/offers";
 import TestimonialsTable from "../components/testimonial";
 import Hero from "../components/hero";
 

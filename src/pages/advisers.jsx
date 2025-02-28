@@ -14,12 +14,12 @@ const Advisers = () => {
 
     <main class="main-content mb-[40px]">
         <div class="title-section">
-            <h2>Click Hunts Network</h2>
+            <h2>ClickHunts Network</h2>
             <h3>The Advertiser Experience</h3>
         </div>
 
-        <p class="description">
-            The Click Hunts Network is committed to its core principle as a performance-based affiliate network. We uphold transparency by eliminating set-up fees and undisclosed charges. Advertisers exclusively pay for tangible, high-quality results.
+        <p class="description text-center">
+        The Click Hunts Network is committed to its core principle as a performance-based affiliate network. We uphold transparency by eliminating set-up fees and undisclosed charges. Advertisers exclusively pay for tangible, high-quality results. Whether your preferred performance metric involves a sale, installation, download, email submission, or any other real-time action, our diverse network of affiliates excels in delivering the precise type of lead generation essential for your product’s success.
         </p>
 
         <div class="features-grid">

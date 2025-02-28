@@ -7,7 +7,7 @@ const Contact = () => {
         <div class="contact-header">
             <h1 class="contact-title">Contact Us</h1>
             <p class="contact-subtitle">
-                Click Hunts Network aims to respond to all inquiries within the same day. We believe that effective communication is crucial for business, so if we're not talking, we're not getting any business done! Please explore the contact options below – we would be more than happy to hear from you.
+                ClickHunts Network aims to respond to all inquiries within the same day. We believe that effective communication is crucial for business, so if we're not talking, we're not getting any business done! Please explore the contact options below – we would be more than happy to hear from you.
             </p>
         </div>
 

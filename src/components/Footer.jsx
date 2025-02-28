@@ -9,7 +9,7 @@ const Footer = () => {
       <footer>
     <div class="footer-section">
         <h3>About Us</h3>
-        <p>ClickHunts is a performance-based network dedicated to providing personalized services, a broad range of options, and unwavering transparency for advertisers and publishers.</p>
+        <p>ClickHunts Affiliate Network is the leading CPA network, offering top-converting VSLs, the highest CPA payouts, exclusive offers, in-house tracking, and 24/7 affiliate support. Join now and maximize your earnings with the best in the industry!</p>
     </div>
     <div class="footer-section">
         <h3>Services</h3>
@@ -23,7 +23,7 @@ const Footer = () => {
         <h3>Policy Page</h3>
         <ul>
             <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
+            <li><a href="/affiliater-terms-and-conditions">Terms & Condition</a></li>
             <li><a href="#">Cookie Policy</a></li>
         </ul>
     </div>
@@ -36,7 +36,7 @@ const Footer = () => {
         </ul>
     </div>
     <div class="footer-bottom">
-        <p>© ClickHurst. All rights reserved {currentYear}.</p>
+        <p className="font-bold">© ClickHunts. All rights reserved {currentYear}.</p>
     </div>
 </footer>
 //       <footer class="font-sans tracking-wide bg-gray-50 px-10 xl:px-32 pt-12 pb-6">
