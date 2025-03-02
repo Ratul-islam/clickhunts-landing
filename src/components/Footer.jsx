@@ -14,23 +14,23 @@ const Footer = () => {
     <div class="footer-section">
         <h3>Services</h3>
         <ul>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="/help">Help</a></li>
+            <li><a href="/payment">payment</a></li>
+            <li><a href="/payment-edit">payment-edit</a></li>
         </ul>
     </div>
     <div class="footer-section">
         <h3>Policy Page</h3>
         <ul>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="/advertiser-terms">Advertiser term</a></li>
             <li><a href="/affiliater-terms-and-conditions">Terms & Condition</a></li>
-            <li><a href="#">Cookie Policy</a></li>
+            {/* <li><a href="#">Cookie Policy</a></li> */}
         </ul>
     </div>
     <div class="footer-section">
         <h3>Additional</h3>
         <ul>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="#">Partners</a></li>
             <li><a href="#">Sitemap</a></li>
         </ul>

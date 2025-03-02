@@ -12,6 +12,10 @@ import OfferHome from "./offerHome";
 import OfferDetails from "./pages/offerDetails";
 import About from "./pages/About";
 import Terms from "./pages/terms";
+import Help from "./pages/help";
+import Payment from "./pages/payment";
+import PaymentEdit from "./pages/payment-edit";
+import AdvertiserTerm from "./pages/advertiser-term";
 
 function App() {
   return (
@@ -26,9 +30,13 @@ function App() {
       <Route path="/faq" element={<Faq />} />
       <Route path="/about" element={<About />} />
       <Route path="/affiliater-terms-and-conditions" element={<Terms />} />
+      <Route path="/advertiser-terms" element={<AdvertiserTerm />} />
       <Route path="*" element={<NotFound />} />
       <Route path='/offer/' element={<OfferHome />}/>
       <Route path='/:id/:offerId' element={<OfferDetails />}/>
+      <Route path='/help' element={<Help />}/>
+      <Route path='/payment' element={<Payment />}/>
+      <Route path='/payment-edit' element={<PaymentEdit />}/>
     </Routes>
     <Footer/>
   </BrowserRouter>
