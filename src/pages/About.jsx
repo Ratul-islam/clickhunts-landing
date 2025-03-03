@@ -182,7 +182,7 @@ const About = () => {
 
         /* About Section */
         .about {
-            padding: 80px 0;
+            padding: 0px 0;
             background:white;
         }
 
@@ -299,8 +299,8 @@ const About = () => {
                 <div class="aboutContainer">
                     <div class="about-grid">
                         <div>
-                            <h2 className='font-bold text-xl'>Our Mission</h2>
-                            <p>ElickHunts (CH) emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.
+                            <h2 className='font-bold text-3xl'>Our Mission</h2>
+                            <p>ClickHunts emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.
                                 <br />
                                 <br />
                                 The mission of CH is straightforward for an affiliate network: cultivate an environment where both advertisers and publishers can grow and thrive simultaneously. The core objective is to create a symbiotic relationship, ensuring the success of both parties within the network.</p>
@@ -311,8 +311,65 @@ const About = () => {
                     </div>
                 </div>
             </section>
+            <section class="cta max-w-[900px] m-auto rounded-md">
+        <style jsx>
+            {`
+            .cta {
+            padding: 60px 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
 
-            <CTA />
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .primary-button {
+            background: white;
+            color: var(--primary);
+        }
+
+        .secondary-button {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color:white;
+            border: 2px solid white;
+        }
+ @media (max-width: 1024px) {
+            .cta-buttons {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+        }
+            `}
+        </style>
+        <div class="aboutContainer">
+            <h2 className='text-3xl font-bold'>Ready to Get Started?</h2>
+            <p>Join our network and start growing your business today.</p>
+            <div class="cta-buttons">
+                <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="cta-button primary-button">BECOME AN AFFILIATE</a>
+                <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button secondary-button">BECOME AN ADVERTISER</a>
+            </div>
+        </div>
+    </section>
         </div>
     );
 };

@@ -35,15 +35,15 @@ const EnhancedPaymentMethods = () => {
       type: 'Money Transfer',
       description: 'International money transfers',
       minPayout: '100 USD',
-      processingTime: '1-2 business days',
+      processingTime: 'Instant',
       logo: '/assets/payment/wise-2.png'
     },
     {
       name: 'Bank Transfer',
-      type: 'Traditional',
+      type: 'Local Bank',
       description: 'Direct bank-to-bank transfers',
       minPayout: '500 USD',
-      processingTime: '2-5 business days',
+      processingTime: '7-15 business days',
       logo: '/assets/payment/bank.png'
     },
     {
@@ -60,7 +60,7 @@ const EnhancedPaymentMethods = () => {
       type: 'Cryptocurrency',
       description: 'Stablecoin digital currency',
       minPayout: '500 USDT',
-      processingTime: '10-30 minutes',
+      processingTime: '24 hours',
       logo: '/assets/payment/usdt.png'
     },
     {
@@ -68,21 +68,21 @@ const EnhancedPaymentMethods = () => {
       type: 'Cryptocurrency',
       description: 'Digital cryptocurrency payments',
       minPayout: '500 USD',
-      processingTime: '1-2 hours',
+      processingTime: '24 hours',
       logo: '/assets/payment/bitcoin.jpg'
     },
     {
       name: 'Direct Deposit (ACH)',
       type: 'Traditional',
-      description: 'Direct bank-to-bank transfers',
+      description: 'Direct US Bank-To-Bank Transfers',
       minPayout: '100 USD',
-      processingTime: '1-2 hours',
+      processingTime: '3-7 Business Days',
       logo: '/assets/payment/ahc.png'
     },
     {
       name: 'Capitalist',
-      type: 'Traditional',
-      description: 'Direct bank-to-bank transfers',
+      type: 'E-wallet',
+      description: 'Online E-Payment',
       minPayout: '100 USD',
       processingTime: '1-2 hours',
       logo: '/assets/payment/capitalist.png'

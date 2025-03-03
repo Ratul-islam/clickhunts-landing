@@ -208,7 +208,7 @@ const InteractiveHero = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             className="space-y-8 relative z-10"
           >
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -216,7 +216,7 @@ const InteractiveHero = () => {
               <span className="px-4 py-2 rounded-full text-sm font-medium bg-teal-500/10 text-teal-600 border border-teal-500/20">
                 Next Generation Platform
               </span>
-            </motion.div>
+            </motion.div> */}
 
             <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight"
@@ -274,15 +274,17 @@ const InteractiveHero = () => {
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 1 }}
               >
+                <a href="https://clickhunts.everflowclient.io">
                 Get Started Now
+                </a>
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 className="border border-teal-200 text-teal-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-teal-50 transition-colors"
                 whileHover={{ y: -2 }}
                 whileTap={{ y: 1 }}
               >
                 Watch Demo
-              </motion.button>
+              </motion.button> */}
             </motion.div>
           </motion.div>
 
@@ -326,7 +328,7 @@ const InteractiveHero = () => {
 
                 <div className="grid grid-cols-3 gap-4">
                   {[
-                    { label: "Active Users", value: "2,847", change: "+12.5%" },
+                    { label: "Active Users", value: "7,247", change: "+18.5%" },
                     { label: "Conversion Rate", value: "32.4%", change: "+8.3%" },
                     { label: "Avg. Revenue", value: "$12.8k", change: "+15.2%" }
                   ].map((metric, index) => (

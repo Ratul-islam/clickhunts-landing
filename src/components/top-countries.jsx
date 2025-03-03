@@ -20,12 +20,12 @@ const TopCountries = () => {
 
     },
     {
-      name: "Germany",
+      name: "Europe",
       population: "83M+ Population",
       status: "Growing Market",
       verticals: "Technology & Education",
-      tags: [ "Health", "CBD", "COD", "E-Commerce", "Sweepstakes"],
-      link: "/assets/flags/germany.jpg"
+      tags: [ "Health", "CBD", "COD", "E-Commerce", "Sweepstakes", "Nutra", "Live Streaming"],
+      link: "/assets/flags/europe.jpg"
 
     },
     {

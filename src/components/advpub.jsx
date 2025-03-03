@@ -139,7 +139,7 @@ const AdvertiserSection = () => {
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 py-20">
+      <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Stats Dashboard */}
           <div className="lg:w-1/2">
@@ -196,7 +196,9 @@ const AdvertiserSection = () => {
                   boxShadow: `0 4px 12px ${brandColor}40`,
                 }}
               >
+                <a href="https://clickhunts.everflowclient.io/affiliate/signup">
                 Start Earning Now
+                </a>
                 <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -254,7 +256,10 @@ const AdvertiserSection = () => {
                 boxShadow: `0 4px 12px ${brandColor}40`,
               }}
             >
+              <a href="https://clickhunts.everflowclient.io/advertiser/signup">
+
               Get Started Now
+              </a>
               <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

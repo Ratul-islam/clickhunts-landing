@@ -7,7 +7,7 @@ const Affliate = () => {
     <main class="main-content mt-10">
       
         <section class="hero-section">
-            <h1 class="hero-title">Affiliate Experience at ClickHunts Network</h1>
+            <h1 class="hero-title font-bold">Affiliate Experience at ClickHunts Network</h1>
             <p class="hero-text">
             Click Hunts Network understands the needs of affiliates, so we simplify the process with the highest CPA rates, guaranteed rate-matching, and punctual payments. We offer the flexibility to create custom campaigns, access to a diverse range of offers, including exclusive CH-only deals, and dedicated Account Managers for personalized assistance. Our solutions are scalable to accommodate your evolving requirements.
 <br/>

@@ -1,38 +1,47 @@
 
 import mainLogo from "../assets/ClickHunts.png";
 import './footer.css'
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
     return (
 
       <footer>
-    <div class="footer-section">
-        <h3>About Us</h3>
-        <p>ClickHunts Affiliate Network is the leading CPA network, offering top-converting VSLs, the highest CPA payouts, exclusive offers, in-house tracking, and 24/7 affiliate support. Join now and maximize your earnings with the best in the industry!</p>
+    <div class="footer-section"> <NavLink to="/" className="flex-shrink-0">
+              <img
+                src={mainLogo}
+                alt="Click Hunts"
+                className="h-12 sm:h-16 w-auto"
+              />
+            </NavLink>
+              <span className="block mt-4 text-[16px]">30 N Gould Street Suite #41562 <br/>Sheridan, WY 82801, USA</span>
     </div>
     <div class="footer-section">
         <h3>Services</h3>
         <ul>
             <li><a href="/help">Help</a></li>
-            <li><a href="/payment">payment</a></li>
-            <li><a href="/payment-edit">payment-edit</a></li>
+            <li><a href="/payment">Payment</a></li>
+            <li><a href="/offer">Offer</a></li>
+            {/* <li><a href="/payment-edit">payment-edit</a></li> */}
         </ul>
     </div>
     <div class="footer-section">
         <h3>Policy Page</h3>
         <ul>
-            <li><a href="/advertiser-terms">Advertiser term</a></li>
-            <li><a href="/affiliater-terms-and-conditions">Terms & Condition</a></li>
+            <li><a href="/advertiser-terms">Advertiser Terms</a></li>
+            <li><a href="/affiliate-terms-and-conditions">Affiliate Terms</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
             {/* <li><a href="#">Cookie Policy</a></li> */}
         </ul>
     </div>
     <div class="footer-section">
         <h3>Additional</h3>
         <ul>
+            <li><a href="/event-payout">Event Payout</a></li>
+            <li><a href="/event-schedule">Event Schedule</a></li>
             <li><a href="/faq">FAQ</a></li>
-            <li><a href="#">Partners</a></li>
-            <li><a href="#">Sitemap</a></li>
+            {/* <li><a href="https://clickhunts.everflowclient.io">Login</a></li> */}
         </ul>
     </div>
     <div class="footer-bottom">

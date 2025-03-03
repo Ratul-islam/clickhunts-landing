@@ -18,9 +18,14 @@ const ReadyToPertner = () => {
                 </div>
                 <h2 class="partner-title">Affiliate Partners</h2>
                 <p class="partner-description">Earn more from your traffic by promoting brands people love.</p>
-                <a href="/" class="apply-button">I'm Ready to Apply Now</a>
+                <a href="/" class="apply-button">
+                <a href="https://clickhunts.everflowclient.io/affiliate/signup">
+
+                I'm Ready to Apply Now
+                </a>
+                </a>
                 <br/>
-                <a href="/" class="learn-more">Tell Me More</a>
+                <a href="/affiliate" class="learn-more">Tell Me More</a>
             </div>
 
 
@@ -35,9 +40,13 @@ const ReadyToPertner = () => {
                 </div>
                 <h2 class="partner-title">Advertiser Partners</h2>
                 <p class="partner-description">Profitably acquire customers at scale, with zero risk.</p>
-                <a href="/" class="apply-button">I'm Ready to Apply Now</a>
+                <a href="/" class="apply-button">
+                <a href='https://clickhunts.everflowclient.io/advertiser/signup'>
+
+                I'm Ready to Apply Now</a>
+                </a>
                 <br/>
-                <a href="/" class="learn-more">Tell Me More</a>
+                <a href="/advertisers" class="learn-more">Tell Me More</a>
             </div>
 
             

@@ -34,7 +34,7 @@ const Home = () => {
       <PartnersShowcase/>
       <EnhancedPaymentMethods/>
       {/* <OffersList/> */}
-      <AnimatedBanner/>
+      {/* <AnimatedBanner/> */}
     </div>
   );
 };

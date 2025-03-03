@@ -186,7 +186,11 @@ const PremiumNetworkSection = () => {
             </div>
 
             <button className="inline-flex items-center px-8 py-4 bg-[#048998] text-white font-semibold rounded-xl hover:bg-[#037885] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group">
-              <span>Join Our Network</span>
+              <span>
+               <a href='https://clickhunts.everflowclient.io'> 
+               Join Our Network
+               </a> 
+               </span>
               <svg 
                 className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
                 fill="none" 

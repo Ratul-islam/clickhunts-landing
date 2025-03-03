@@ -82,10 +82,14 @@ const NavBar = () => {
 
               <div className="flex gap-2 ml-4">
                 <button className="text-white bg-[#067e95] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#056e82] transition-colors duration-200">
+                <a href="https://clickhunts.everflowclient.io">
                   Login
+                </a>
                 </button>
                 <button className="text-white bg-[#067e95] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#056e82] transition-colors duration-200">
+                  <a href="https://clickhunts.everflowclient.io/affiliate/signup">
                   Sign up
+                  </a>
                 </button>
               </div>
             </div>

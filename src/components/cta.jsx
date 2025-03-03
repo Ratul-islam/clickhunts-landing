@@ -16,7 +16,6 @@ const CTA = () => {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 30px;
         }
 
         .cta-button {
@@ -54,11 +53,11 @@ const CTA = () => {
             `}
         </style>
         <div class="aboutContainer">
-            <h2>Ready to Get Started?</h2>
+            <h2 className='text-3xl font-bold'>Ready to Get Started?</h2>
             <p>Join our network and start growing your business today.</p>
             <div class="cta-buttons">
                 <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="cta-button primary-button">BECOME AN AFFILIATE</a>
-                <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button secondary-button">BECOME AN ADVERTISER</a>
+                {/* <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button secondary-button">BECOME AN ADVERTISER</a> */}
             </div>
         </div>
     </section>
