@@ -16,10 +16,12 @@ import Help from "./pages/help";
 import Payment from "./pages/payment";
 import PaymentEdit from "./pages/payment-edit";
 import AdvertiserTerm from "./pages/advertiser-term";
+import ScrollToTop from "./components/scrollTop";
 
 function App() {
   return (
     <BrowserRouter basename="/">
+     <ScrollToTop/> 
     <NavBar />
     
     <Routes>

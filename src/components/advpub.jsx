@@ -216,8 +216,8 @@ const AdvertiserSection = () => {
               For Advertisers
             </div>
 
-            <h2 className="text-4xl font-bold mb-6">
-              Drive Growth with Smart Advertising
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Get Smart Advertising
             </h2>
 
             <p className="text-lg text-gray-600 mb-8">

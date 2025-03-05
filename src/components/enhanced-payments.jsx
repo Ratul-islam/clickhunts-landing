@@ -90,7 +90,7 @@ const EnhancedPaymentMethods = () => {
   ];
 
   return (
-    <div className="bg-white py-24 relative overflow-hidden ">
+    <div className="bg-white py-24 pb-12 relative overflow-hidden ">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#048998]/5 to-transparent"></div>
       

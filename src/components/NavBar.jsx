@@ -42,20 +42,20 @@ const NavBar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`w-full z-50 transition-all duration-300 ${
+        className={`w-full mx-auto z-50 transition-all duration-300 ${
           isSticky 
             ? "fixed top-0 left-0 right-0 bg-white shadow-md" 
             : "sticky bg-transparent"
         }`}
       >
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
             <NavLink to="/" className="flex-shrink-0">
               <motion.img
                 src={mainLogo}
                 alt="Click Hunts"
-                className="h-8 sm:h-10 w-auto"
+                className="h-12 sm:h-14 w-auto"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -81,16 +81,16 @@ const NavBar = () => {
               ))}
 
               <div className="flex gap-2 ml-4">
-                <button className="text-white bg-[#067e95] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#056e82] transition-colors duration-200">
                 <a href="https://clickhunts.everflowclient.io">
-                  Login
-                </a>
-                </button>
                 <button className="text-white bg-[#067e95] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#056e82] transition-colors duration-200">
-                  <a href="https://clickhunts.everflowclient.io/affiliate/signup">
-                  Sign up
-                  </a>
+                  Login
                 </button>
+                </a>
+                  <a href="https://clickhunts.everflowclient.io/affiliate/signup">
+                <button className="text-white bg-[#067e95] px-4 py-2 rounded-md text-sm font-semibold hover:bg-[#056e82] transition-colors duration-200">
+                  Sign up
+                </button>
+                  </a>
               </div>
             </div>
 

@@ -99,7 +99,7 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
                         </th>
                         <th
                           scope="col"
-                          className="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase "
+                          className="px-6 py-3 text-start md:text-md text-sm font-medium text-gray-800 uppercase "
                         >
                           Payout
                         </th>

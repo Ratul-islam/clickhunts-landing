@@ -141,7 +141,7 @@ const InteractiveHero = () => {
       id: `top-${i}`,
       x: Math.random() * window.innerWidth,
       y: Math.random() * (window.innerHeight / 2),
-      radius: 45 + Math.random() * 35,
+      radius: 25 + Math.random() * 35,
     }));
   }, []);
 
@@ -330,7 +330,7 @@ const InteractiveHero = () => {
                   {[
                     { label: "Active Users", value: "7,247", change: "+18.5%" },
                     { label: "Conversion Rate", value: "32.4%", change: "+8.3%" },
-                    { label: "Avg. Revenue", value: "$12.8k", change: "+15.2%" }
+                    { label: "Daily Avg. Revenue", value: "$28.5k", change: "+15.2%" }
                   ].map((metric, index) => (
                     <motion.div
                       key={index}
