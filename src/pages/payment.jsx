@@ -378,12 +378,12 @@ const Payment = () => {
     `}</style>
     <div class="header-container">
         <div class="header-box">
-            <h1>ClickHunts Payment Policy</h1>
+            <h1 className='font-bold'>ClickHunts Payment Policy</h1>
         </div>
     </div>
 
 
-    <h2>Payment Schedules</h2>
+    <h2 className='font-bold'>Payment Schedules</h2>
     <div class="category">
         <div class="category-header">
             <div class="category-name">Health, CBD, Nutra, COD</div>
@@ -475,7 +475,7 @@ const Payment = () => {
         </div>
     </div>
 
-    <h2>Payout Details</h2>
+    <h2 className='font-bold'>Payout Details</h2>
     <div class="payout-container">
         <div class="payout-grid">
             <div class="payout-item">
@@ -581,10 +581,23 @@ const Payment = () => {
                 <div class="fee-covered">Fee covered by ClickHunts</div>
             </div>
         </div>
+
+<div className='flex justify-center items-center mt-12'>
+
+<a href="/payment-edit" className="px-6 py-3 bg-[#007f96] text-white rounded-lg hover:bg-[#006e85] cursor-pointer transition-all transform hover:scale-105 hover:translate-x-3 flex items-center space-x-2">
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 3l9 9-4 4-9-9 4-4zm0 0L3 13l-3 8 8-3 9-9z"/>
+  </svg>
+  <span className='font-bold'>Payment Profile Setup</span>
+</a>
+
+
+</div>
     </div>
 
-    <div class="faq-section">
-        <h2>Frequently Asked Payment Questions</h2>
+
+    <div class="faq-section mb-16">
+        <h2 className='font-bold'>Frequently Asked Payment Questions</h2>
 
         <div class="faq-item">
             <div class="faq-question">What payment methods are available?</div>

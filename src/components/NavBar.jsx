@@ -161,12 +161,18 @@ const NavBar = () => {
             </div>
 
             <div className="mt-6 flex flex-col gap-3">
+              <a href="https://clickhunts.everflowclient.io">
               <button className="w-full text-white bg-[#067e95] px-6 py-2.5 rounded-md font-semibold text-sm hover:bg-[#056e82] transition-colors duration-200">
+
                 Login
+
               </button>
+                </a>
+              <a href="https://clickhunts.everflowclient.io/affiliate/signup">
               <button className="w-full text-white bg-[#067e95] px-6 py-2.5 rounded-md font-semibold text-sm hover:bg-[#056e82] transition-colors duration-200">
                 Sign up
               </button>
+              </a>
             </div>
           </div>
         </motion.div>

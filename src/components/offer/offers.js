@@ -149,9 +149,6 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
                         );
                       })}
                     </tbody>
-                    
-
-
                   </table>
                 </div>
                 
@@ -166,7 +163,9 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
   <div class="inline-flex mt-2 xs:mt-0">
     {
   currentPage>1 && <>
-    <button onClick={()=>{if(currentPage>1)setCurrentPage(currentPage-1)}} class="flex items-center justify-center px-4 h-10 text-base font-medium  text-[#068896] rounded-s border-2 border-[#068896]">
+    <button onClick={()=>{if(currentPage>1)setCurrentPage(currentPage-1)
+    window.scrollTo(0, 0);
+    }} class="flex items-center justify-center px-4 h-10 text-base font-medium  text-[#068896] rounded-s border-2 border-[#068896]">
         <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/>
         </svg>
@@ -184,7 +183,10 @@ const Offers = ({ selectedCountry, selectedCategory, selectedTraffic, search }) 
     {
       data?.length<20 ? "": <>
       
-    <button onClick={()=>{setCurrentPage(currentPage+1)}} class="flex items-center justify-center px-4 h-10 text-base font-medium text-[#068896] rounded-s border-2 border-[#068896]">
+    <button onClick={()=>{setCurrentPage(currentPage+1)
+
+    window.scrollTo(0, 0);
+    }} class="flex items-center justify-center px-4 h-10 text-base font-medium text-[#068896] rounded-s border-2 border-[#068896]">
         {currentPage+1}
     </button>
     <button onClick={()=>{setCurrentPage(currentPage+1)}} class="flex items-center justify-center px-4 h-10 text-base font-medium  text-[#068896] rounded-s border-2 border-[#068896]">

@@ -17,6 +17,7 @@ import Payment from "./pages/payment";
 import PaymentEdit from "./pages/payment-edit";
 import AdvertiserTerm from "./pages/advertiser-term";
 import ScrollToTop from "./components/scrollTop";
+import ClickHuntsFooter from "./components/clickhunts-footer";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
       <Route path="/advertisers" element={<Advisers />} />
       <Route path="/faq" element={<Faq />} />
       <Route path="/about" element={<About />} />
-      <Route path="/affiliater-terms-and-conditions" element={<Terms />} />
+      <Route path="/affiliate-terms-and-conditions" element={<Terms />} />
       <Route path="/advertiser-terms" element={<AdvertiserTerm />} />
       <Route path="*" element={<NotFound />} />
       <Route path='/offer/' element={<OfferHome />}/>
@@ -40,7 +41,7 @@ function App() {
       <Route path='/payment' element={<Payment />}/>
       <Route path='/payment-edit' element={<PaymentEdit />}/>
     </Routes>
-    <Footer/>
+    <ClickHuntsFooter/>
   </BrowserRouter>
   );
 }
