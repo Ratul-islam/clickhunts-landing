@@ -12,14 +12,17 @@ import PremiumNetworkSection from "../components/cpa";
 import AdvertiserSection from "../components/advpub";
 import TestimonialsTable from "../components/testimonial";
 import Hero from "../components/hero";
+import NewHero from "../components/newHero";
 
 const Home = () => {
 
   return (
     <div>
-      <Hero/>
-      <CompanyOverview/>
+      {/* <Hero/> */}
+      {/* <NewHero/> */}
       <PremiumNetworkSection/>
+      <CompanyOverview/>
+      {/* <PremiumNetworkSection/> */}
       <GetStartedSection/>
       <StatsBanner/>
       <Verticles/>
@@ -47,6 +50,7 @@ const Home = () => {
         .cta-buttons {
             display: flex;
             justify-content: center;
+            // padding-inline:30px;
             gap: 20px;
         }
 
@@ -86,8 +90,10 @@ const Home = () => {
         }
             `}
         </style>
-        <div class="aboutContainer">
-            <div class="cta-buttons">
+        <div class="aboutContainer ">
+            <div class="cta-buttons items-center">
+
+            <h2 className='text-2xl md:text-4xl  font-bold'>Ready to Get Started?</h2>
                 <a href="https://clickhunts.everflowclient.io/affiliate/signup" class="cta-button-home primary-button">BECOME AN AFFILIATE</a>
                 <a href="https://clickhunts.everflowclient.io/advertiser/signup" class="cta-button-home secondary-button">BECOME AN ADVERTISER</a>
             </div>

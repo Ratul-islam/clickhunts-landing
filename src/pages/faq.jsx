@@ -4,7 +4,7 @@ import "../css/faq.css"
 const Faq = () => {
   return (
 <>
-    <div class="hero">
+    <div class="faq-hero">
     <h1>Welcome to ClickHunts Knowledge Hub</h1>
     <p>Your complete guide to maximizing success with our industry-leading affiliate marketing platform</p>
 </div>

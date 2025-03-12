@@ -177,7 +177,7 @@ const EnhancedPaymentMethods = () => {
         </div>
 
         {/* Features Section */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-20">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-10">
           {[
             {
               title: 'Secure Transactions',

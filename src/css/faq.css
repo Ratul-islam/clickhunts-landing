@@ -105,7 +105,7 @@ body {
 }
 
 /* Main Content */
-.hero {
+.faq-hero {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     color: white;
     padding: 60px 20px;
@@ -113,12 +113,12 @@ body {
     margin-bottom: 40px;
 }
 
-.hero h1 {
+.faq-hero h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.hero p {
+.faq-hero p {
     font-size: 1.2em;
     max-width: 800px;
     margin: 0 auto;
@@ -444,11 +444,11 @@ html {
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .faq-hero {
         padding: 40px 20px;
     }
 
-    .hero h1 {
+    .faq-hero h1 {
         font-size: 2em;
     }
 
@@ -470,7 +470,7 @@ html {
         margin-left: auto;
     }
 
-    .hero h1 {
+    .faq-hero h1 {
         font-size: 1.8em;
     }
 }

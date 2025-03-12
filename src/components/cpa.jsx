@@ -38,9 +38,71 @@ const PremiumNetworkSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="relative max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side: Network Visualization */}
+
+          <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+            <div>
+              
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Advanced Performance <br/> <span className='text-teal-600'>
+                   Marketing Network
+                  </span>
+              </h1>
+              <p className="text-gray-600 text-lg leading-relaxed ">
+                Join our premium network to access high-converting offers and cutting-edge tracking technology. Partner with industry leaders and scale your success.
+              </p>
+            </div>
+
+            <div className="grid gap-6">
+              {[
+                {
+                  title: "Multiple Payment Models",
+                  description: "Flexible payment options including CPA, CPL, CPS, and custom models."
+                },
+                {
+                  title: "Smart Tracking",
+                  description: "Real-time analytics and advanced conversion tracking system."
+                },
+                {
+                  title: "Global Reach",
+                  description: "Access to premium offers from worldwide advertisers."
+                }
+              ].map((feature, index) => (
+                <div 
+                  key={index}
+                  className="group p-6 rounded-xl bg-white hover:bg-gradient-to-r hover:from-[#048998]/5 hover:to-transparent transition-all duration-300 border border-gray-100 hover:border-[#048998]/20"
+                >
+                  <h3 className="text-gray-900 font-semibold text-xl mb-2 group-hover:text-[#048998] transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <button className="inline-flex items-center px-8 py-4 bg-[#048998] text-white font-semibold rounded-xl hover:bg-[#037885] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group">
+              <span>
+               <a href='https://clickhunts.everflowclient.io'> 
+               Join Our Network
+               </a> 
+               </span>
+              <svg 
+                className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Right side: Content */}
+
           <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="relative">
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-[#048998]/10 via-transparent to-transparent opacity-30" />
@@ -142,65 +204,7 @@ const PremiumNetworkSection = () => {
             </div>
           </div>
 
-          {/* Right side: Content */}
-          <div className={`space-y-8 transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-            <div>
-              <h2 className="text-[#048998] text-xl font-semibold mb-3">
-                Network Excellence
-              </h2>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Advanced Performance Marketing Network
-              </h1>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Join our premium network to access high-converting offers and cutting-edge tracking technology. Partner with industry leaders and scale your success.
-              </p>
-            </div>
-
-            <div className="grid gap-6">
-              {[
-                {
-                  title: "Multiple Payment Models",
-                  description: "Flexible payment options including CPA, CPL, CPS, and custom models."
-                },
-                {
-                  title: "Smart Tracking",
-                  description: "Real-time analytics and advanced conversion tracking system."
-                },
-                {
-                  title: "Global Reach",
-                  description: "Access to premium offers from worldwide advertisers."
-                }
-              ].map((feature, index) => (
-                <div 
-                  key={index}
-                  className="group p-6 rounded-xl bg-white hover:bg-gradient-to-r hover:from-[#048998]/5 hover:to-transparent transition-all duration-300 border border-gray-100 hover:border-[#048998]/20"
-                >
-                  <h3 className="text-gray-900 font-semibold text-xl mb-2 group-hover:text-[#048998] transition-colors">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <button className="inline-flex items-center px-8 py-4 bg-[#048998] text-white font-semibold rounded-xl hover:bg-[#037885] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group">
-              <span>
-               <a href='https://clickhunts.everflowclient.io'> 
-               Join Our Network
-               </a> 
-               </span>
-              <svg 
-                className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </button>
-          </div>
+          
         </div>
       </div>
 

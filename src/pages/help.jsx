@@ -32,7 +32,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Understanding Analytics</a></li>
                     </ul>
                 </div>
-                <a href="/getting-started" class="more-info-btn">Get More Info</a>
+                <a href="/getting-started" class="more-info-btn">Coming Soon</a>
             </div>
 
             <div class="category-card">
@@ -48,7 +48,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Team Management</a></li>
                     </ul>
                 </div>
-                <a href="/account-management" class="more-info-btn">Get More Info</a>
+                <a href="/account-management" class="more-info-btn">Coming Soon</a>
             </div>
 
             <div class="category-card">
@@ -64,7 +64,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Performance Reports</a></li>
                     </ul>
                 </div>
-                <a href="/campaign-tools" class="more-info-btn">Get More Info</a>
+                <a href="/campaign-tools" class="more-info-btn">Coming Soon</a>
             </div>
 
             <div class="category-card">
@@ -80,7 +80,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Success Stories</a></li>
                     </ul>
                 </div>
-                <a href="/best-practices" class="more-info-btn">Get More Info</a>
+                <a href="/best-practices" class="more-info-btn">Coming Soon</a>
             </div>
 
             <div class="category-card">
@@ -96,7 +96,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Offer Requirements</a></li>
                     </ul>
                 </div>
-                <a href="/offer-management" class="more-info-btn">Get More Info</a>
+                <a href="/offer-management" class="more-info-btn">Coming Soon</a>
             </div>
 
             <div class="category-card">
@@ -112,7 +112,7 @@ const Help = () => {
                         <li><a href="#" class="category-link">Community Forums</a></li>
                     </ul>
                 </div>
-                <a href="/support-resources" class="more-info-btn">Get More Info</a>
+                <a href="/support-resources" class="more-info-btn">Coming Soon</a>
             </div>
         </div>
     </div>

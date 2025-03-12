@@ -15,7 +15,7 @@ const Footer = () => {
                 className="h-12 sm:h-16 w-auto mx-auto md:mx-0"
               />
             </NavLink>
-              <span className="block mt-4 text-[16px]">30 N Gould Street Suite #41562 <br/>Sheridan, WY 82801, USA</span>
+              <span className="block mt-4 text-[18px]">30 N Gould Street Suite #41562 <br/>Sheridan, WY 82801, USA</span>
     </div>
     <div class="footer-section">
         <h3>Services</h3>

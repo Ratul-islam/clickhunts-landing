@@ -15,7 +15,7 @@ const FooterLink = ({ icon: Icon, children, href }) => (
     href={href}
     className="flex items-center space-x-2 text-gray-700 hover:text-teal-600 transition-all duration-300"
   >
-    <Icon className="w-4 h-4 text-orange-500 group-hover:text-teal-600 transition-colors" />
+    <Icon className="w-4 h-4 text-teal-700 group-hover:text-teal-600 transition-colors" />
     <span>{children}</span>
   </a>
 );
@@ -39,15 +39,15 @@ const ClickHuntsHorizontalFooter = () => {
       <div className=" mx-auto px-4 w-[100%]">
         <div className="flex flex-wrap justify-between items-start">
           {/* Logo and Address */}
-          <div className="w-full md:w-auto mb-6 md:mb-0">
+          <div className="w-full md:w-auto mb-6 md:mb-0 ml-6 md:ml-0">
             <div className="flex items-center mb-4">
               <img 
                 src={mainLogo}
                 alt="ClickHunts Logo" 
-                className="h-10"
+                className="h-14"
               />
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-md text-gray-600">
               <p>30 N Gould Street Suite #41562</p>
               <p>Sheridan, WY 82801, USA</p>
             </div>

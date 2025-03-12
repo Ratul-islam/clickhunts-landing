@@ -18,6 +18,7 @@ import PaymentEdit from "./pages/payment-edit";
 import AdvertiserTerm from "./pages/advertiser-term";
 import ScrollToTop from "./components/scrollTop";
 import ClickHuntsFooter from "./components/clickhunts-footer";
+import Privacy from "./pages/privacy";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Route path='/help' element={<Help />}/>
       <Route path='/payment' element={<Payment />}/>
       <Route path='/payment-edit' element={<PaymentEdit />}/>
+      <Route path='/privacy' element={<Privacy />}/>
     </Routes>
     <ClickHuntsFooter/>
   </BrowserRouter>

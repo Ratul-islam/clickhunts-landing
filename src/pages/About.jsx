@@ -175,6 +175,8 @@ const About = () => {
         }
 
         .feature-title {
+        display: block;
+            text-align: center;
             font-size: 1.2em;
             margin-bottom: 15px;
             color: var(--primary);
@@ -299,7 +301,7 @@ const About = () => {
                 <div class="aboutContainer">
                     <div class="about-grid">
                         <div>
-                            <h2 className='font-bold text-3xl'>Our Mission</h2>
+                            <h2 className='font-bold text-3xl mb-6'>Our Mission</h2>
                             <p>ClickHunts emerged to fill the gap where an optimal solution was lacking. Drawing from firsthand knowledge of the needs of advertisers and publishers, CH was conceived as a performance-based network, built on the principles of dedicated and personalized service, a broad range of options, security for all stakeholders, and unwavering transparency.
                                 <br />
                                 <br />
