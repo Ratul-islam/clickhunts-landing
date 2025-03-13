@@ -3,115 +3,381 @@ import React from 'react'
 const Terms = () => {
     return (
         <div>
-            <main id="main" class="mt-6 bg-white">
-                <div id="content" class="content-area page-wrapper" role="main">
-                    <div class="row row-main max-w-[1100px] m-auto">
-                        <div class="large-12 col">
-                            <div class="col-inner text-black font-[500]">
+      <style jsx>{
+        `
+    .advertiser-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      position: relative;
+    }
+    
+    .background-pattern {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.07;
+      background-image: 
+        radial-gradient(circle at 100% 0%, var(--primary) 0%, transparent 40%),
+        radial-gradient(circle at 0% 100%, var(--accent) 0%, transparent 40%);
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(4, 137, 152, 0.08) 0%, transparent 70%);
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+    
+    .title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #048998 0%, #037885 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .terms-section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--primary);
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+    }
+    
+    h3 {
+      color: var(--text-dark);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p, ul, ol {
+      margin-bottom: 1.2rem;
+      color: var(--text-light);
+    }
+    
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .term-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      margin-right: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    
+    .term-title {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .effective-date {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+    
+    .contact-us {
+      background: var(--primary-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    
+    .contact-us h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    
+    .contact-us p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 15px rgba(4, 137, 152, 0.25);
+    }
+    
+    .contact-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(4, 137, 152, 0.35);
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--gray-border);
+      color: var(--text-light);
+    }
+    
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: var(--white);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-decoration: none;
+    }
+    
+    .scroll-to-top.visible {
+      opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .advertiser-container {
+        padding: 40px 20px;
+      }
+      
+      .title {
+        font-size: 2rem;
+      }
+      
+      .terms-section {
+        padding: 1.5rem;
+      }
+      
+      .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.2rem;
+      }
+    }`
+        }
+  </style>
 
+  <div class="advertiser-container">
+      <div class="background-pattern"></div>
 
+      <div class="header">
+        <h1 class="title">Affiliate Terms and Conditions</h1>
+        <p class="subtitle">This Agreement outlines the relationship between
+          ClickHunts Network LLC ("ClickHunts Network") and YOU the (PUBLISHER).
+          By joining our affiliate program, you agree to abide by these terms
+          and conditions.</p>
+      </div>
 
-                                <p className='text-center'><strong><span className='text-[160%]'>SERVICE AGREEMENT </span></strong><br />
-                                    <span >The following terms and conditions (this “Agreement”) is a legal agreement between ClickHunts</span><span > Network LLC (“ClickHunts Network”), and YOU the (PUBLISHER). PUBLISHER </span><span >and Click Hunts Network may also be individually referred to herein as a “Party” and </span><span >collectively as “Parties.” If there is any conflict between these Terms and Conditions and the </span><span >Insertion Order(s), the Insertion Order(s) shall control. This Agreement constitutes the entire </span><span >and only agreement between ClickHunts Network LLC and PUBLISHER and supersedes </span><span >all prior or contemporaneous agreements, representations, warranties and conditions with </span><span >respect to the Network.</span></p>
-                                    <br/>
-                                <p className='text-center'><span >1) INSERTION ORDER: or “IO” means those certain separate or attached written </span><span >document(s) titled, substantially, Insertion Order, entered into and executed by both parties </span><span >hereto and which incorporates this MSA by reference. IOs shall set forth the specific Services </span><span >to be provided by PUBLISHER and may set forth additional terms such as the deliverables, </span><span >scope, duration, responsibilities, fees, payment terms, and other details applicable to such </span><span >Services.</span></p>
+      <div class="terms-section">
+        <span class="term-number">1</span>
+        <span class="term-title">Insertion Order</span>
+        <p>An "IO" means those certain separate or attached written document(s)
+          titled, substantially, Insertion Order, entered into and executed by
+          both parties hereto and which incorporates this MSA by reference. IOs
+          shall set forth the specific Services to be provided by PUBLISHER and
+          may set forth additional terms such as the deliverables, scope,
+          duration, responsibilities, fees, payment terms, and other details
+          applicable to such Services.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >2) SERVICES: PUBLISHER may enter into various advertising campaigns through one or more </span><span >online platforms (collectively, the “Platform”) which facilitates the exchange of “Payable </span><span >Actions” between potential advertisers and publishers. A “Payable Action” is defined as a </span><span >specific request made by a consumer for a specific product or service. Each Party may </span><span >represent one or more advertisers and/or publishers hereunder, according to insertion orders. ClickHunts</span><span >&nbsp;Network hereby grants to PUBLISHER during the Contract Period a non- </span><span >exclusive, royalty-free, worldwide right and license by all means and in any media, whether </span><span >now known or hereafter discovered, to use, reproduce, distribute, publicly perform, publicly </span><span >display and digitally perform such Advertisement and all its constituent parts.</span></p>
-                                <br/>
-                                
-                                <p className='text-center'><span >3) QUALIFIED ACTIONS: Qualified Actions are referred to as Leads, Calls, Sales, SMS Text </span><span >Messages, or any other form of actionable option prospects who meet Click Hunts </span><span >Network’s screening criteria as described in the Insertion Order and who provide their </span><span >complete valid contact data. PUBLISHER will be paid on a delivered Qualified Action basis </span><span >defined as when a user agrees through a pre approved opt-in method to be contacted. In the </span><span >case of any dispute between the parties as to the number of Qualified Actions, ClickHunts</span><span >&nbsp;Network’s numbers will control.&nbsp;</span></p>
-                                <br/>
-                                
-                                <p className='text-center'><span >4) LEAD VALIDATION PROCEDURE: Click Hunts Network will verify each Qualified </span><span >Action delivered by the PUBLISHER. Upon receipt, all Qualified Actions will be checked for </span><span >data validity (i.e. containing valid data inputs for the fields specified in the Insertion Order) </span><span >and uniqueness of data (i.e. that the Qualified Actions are not present in ClickHunts </span><span >Network’s database for the designated Advertisement in the past 60 days). Click Hunts </span><span >Network reserves the right to send an auto-responder to all respondents re-confirming their </span><span >request for information. Any objections from respondents (about the email, or the offer) will </span><span >be raised to the PUBLISHER.</span></p>
-                                <br/>
-                                
-                                <p className='text-center'><span >5) CREATIVE CHANGES: Editing of ClickHunts Network’s Creative is strictly </span><span >prohibited, without prior written approval from ClickHunts Network. Creative includes, </span><span >but is not limited to, text ads, graphic ads, from and subject line, any copy associated with the </span><span >campaign including survey questions and answers. Any changes to Creative, without prior </span><span >written permission will result in the loss of payment of Leads per offer/campaign basis.&nbsp;</span></p>
+      <div class="terms-section">
+        <span class="term-number">2</span>
+        <span class="term-title">Services</span>
+        <p>PUBLISHER may enter into various advertising campaigns through one or
+          more online platforms (collectively, the "Platform") which facilitates
+          the exchange of "Payable Actions" between potential advertisers and
+          publishers. A "Payable Action" is defined as a specific request made
+          by a consumer for a specific product or service. Each Party may
+          represent one or more advertisers and/or publishers hereunder,
+          according to insertion orders.</p>
+        <p>ClickHunts Network hereby grants to PUBLISHER during the Contract
+          Period a non-exclusive, royalty-free, worldwide right and license by
+          all means and in any media, whether now known or hereafter discovered,
+          to use, reproduce, distribute, publicly perform, publicly display and
+          digitally perform such Advertisement and all its constituent
+          parts.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >6) ADVERTISER TRADEMARKS: The trademarks of Advertisers are to be used only as </span><span >presented and contained in Creative Materials. PUBLISHER shall not use and shall require it’s </span><span >third party partners know as SUB-PUBLISHERS/AFFILIATES to agree not to use Advertisers </span><span >trademarks for any other purpose, including but not limited to bidding on Advertiser </span><span >trademarks in search engines, using Advertiser trademarks in the display URL in search </span><span >marketing, and including Advertiser trademarks in Advertising Locations URLs.</span></p>
-                                <p className='text-center'><span >7) ADVERTISING GUIDELINES: PUBLISHER may, in its complete discretion, reject, cancel or </span><span >remove at any time any Advertisement from the service for any reason without prior notice to Click Hunts</span><span > Network. PUBLISHER must notify ClickHunts Network following the </span><span >rejection, cancellation or removal of any Advertisement from the service within 24 hours.</span></p>
+      <div class="terms-section">
+        <span class="term-number">3</span>
+        <span class="term-title">Qualified Actions</span>
+        <p>Qualified Actions are referred to as Leads, Calls, Sales, SMS Text
+          Messages, or any other form of actionable option prospects who meet
+          Click Hunts Network's screening criteria as described in the Insertion
+          Order and who provide their complete valid contact data. PUBLISHER
+          will be paid on a delivered Qualified Action basis defined as when a
+          user agrees through a pre-approved opt-in method to be contacted.</p>
+        <p>In the case of any dispute between the parties as to the number of
+          Qualified Actions, ClickHunts Network's numbers will control.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >8) TERM &amp; TARGET LAUNCH: Term will be as noted in the (Insertion Order). Agreement </span><span >may continue thereafter by mutual consent but may be terminated by either party for any </span><span >reason whatsoever. If Budget caps are provided to PUBLISHER and PUBLISHER does not fulfill </span><span >set allocation ClickHunts has full rights to reassign any used allocation. All legitimate </span><span >revenue due to PUBLISHER will be paid during the next billing cycle. If PUBLISHER defrauds </span><span >the ClickHunts Network, then payment is revoked as determined solely by Click Hunts</span><span >&nbsp;Network.</span></p>
+      <div class="terms-section">
+        <span class="term-number">4</span>
+        <span class="term-title">Lead Validation Procedure</span>
+        <p>Click Hunts Network will verify each Qualified Action delivered by
+          the PUBLISHER. Upon receipt, all Qualified Actions will be checked for
+          data validity (i.e. containing valid data inputs for the fields
+          specified in the Insertion Order) and uniqueness of data (i.e. that
+          the Qualified Actions are not present in ClickHunts Network's database
+          for the designated Advertisement in the past 60 days).</p>
+        <p>Click Hunts Network reserves the right to send an auto-responder to
+          all respondents re-confirming their request for information. Any
+          objections from respondents (about the email, or the offer) will be
+          raised to the PUBLISHER.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >9) PAYMENT: PUBLISHER will invoice Click Hunts Network on a monthly basis or per </span><span >agreed upon payment terms set forth in Insertion Order at the payout rates reflected in the </span><span >Insertion Order. The invoice will reflect delivery of final qualified action numbers that are </span><span >based upon numbers reported by ClickHunts Network to PUBLISHER pursuant to the </span><span >terms of this Agreement. All PUBLISHERS are required to submit a valid signed W9 or W8. </span><span >These documents can be found on the INTERNAL REVENUE SERVICE (IRS) website. Every </span><span >PUBLISHER Account must have a unique, valid taxpayer identification number (TIN) or valid </span><span >Social Security number on file with the ClickHunts Network. All payments are based on </span><span >actual figures as defined, accounted and audited by the Click Hunts Network. In the </span><span >event ClickHunts Network does not receive payment from it’s ADVERTISER(S) for any </span><span >reason including, but not limited to, traffic provided by PUBLISHER or PUBLISHERS third party </span><span >partners or if Advertiser charges back or requests refund of payments, or alleges that any </span><span >Event was fraudulent or was a result of a violation of an applicable law, rule or regulation,. ClickHunts</span><span > Network does not guarantee payments on behalf of the Advertiser. Click Hunts</span><span >&nbsp;Network will not pay for any Events that occur before a Program is initiated, after a </span><span >Program terminates or for actions for a Program that the PUBLISHER was not invited to or is </span><span >not assigned to promote. ClickHunts Network will not be responsible to compensate You </span><span >for actions that are not recorded due to your error. Click Hunts Network shall have no </span><span >obligation to make payment to PUBLISHER.</span></p>
+      <div class="terms-section">
+        <span class="term-number">5</span>
+        <span class="term-title">Creative Changes</span>
+        <p>Editing of ClickHunts Network's Creative is strictly prohibited,
+          without prior written approval from ClickHunts Network. Creative
+          includes, but is not limited to, text ads, graphic ads, from and
+          subject line, any copy associated with the campaign including survey
+          questions and answers.</p>
+        <p>Any changes to Creative, without prior written permission will result
+          in the loss of payment of Leads per offer/campaign basis.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >10) PAYMENT TERMS: ClickHunts Network shall make all payments to PUBLISHER </span><span >within 30 days Net (30) as per standard Network terms of the Invoice Date unless otherwise </span><span >specified and agreed and signed Insertion Order states. All payments made to PUBLISHER do </span><span >not include, and PUBLISHER shall pay, any sales, use or similar tax associated with such </span><span >payment. All Payment service charges such as bank transfer fees are the responsibility of the </span><span >PUBLISHER. All past due amounts shall accrue interest at the rate of one and one-half percent </span><span >(1.5%) per month or the maximum rate allowed by law, whichever is greater. Parties shall </span><span >keep, maintain and preserve, for the term of this Agreement and for one (1) year thereafter, </span><span >accurate records relating to amounts due hereunder (the “Relevant Records”). Either party </span><span >shall have a right at least once per calendar year to audit the Relevant Records of the other </span><span >party for the purpose of verifying fulfillment of party’s payment obligations pursuant to this </span><span >Agreement. Each audit will be conducted at a place agreed to by the parties, during the </span><span >normal business hours, with at least ten (10) business days prior written notice to the party to </span><span >be audited. Auditing party shall pay the fees and expenses of the audit, unless the audit </span><span >reveals a payment discrepancy of more than ten percent (10%) of all payments due in any </span><span >consecutive six (6) month period, in which case audited party shall pay the reasonable fees </span><span >and expenses of the audit, and shall immediately pay to auditing party all amounts found to </span><span >be due.</span></p>
+      <div class="terms-section">
+        <span class="term-number">6</span>
+        <span class="term-title">Advertiser Trademarks</span>
+        <p>The trademarks of Advertisers are to be used only as presented and
+          contained in Creative Materials. PUBLISHER shall not use and shall
+          require it's third party partners know as SUB-PUBLISHERS/AFFILIATES to
+          agree not to use Advertisers trademarks for any other purpose,
+          including but not limited to bidding on Advertiser trademarks in
+          search engines, using Advertiser trademarks in the display URL in
+          search marketing, and including Advertiser trademarks in Advertising
+          Locations URLs.</p>
+      </div>
 
-                                <br/>
-                                
-                                <p className='text-center'><span >11) SUB AFFILIATES: PUBLISHER represents and warrants that it shall not use sub-affiliates, </span><span >third party affiliates, or its own network, each a “Sub-Affiliate” for purposes of this Agreement, </span><span >without ClickHunts Network’s prior written consent. PUBLISHER shall not br/oker </span><span >Programs to any Sub-Affiliate, or to any directly enrolled affiliates, without Click Hunts </span><span >Network’s prior written permission. If PUBLISHER contracts with or otherwise engages or </span><span >arranges for Sub-Affiliates to distribute Programs, PUBLISHER (a) must require each Sub- </span><span >Affiliate to agree in writing to terms and conditions substantially similar to the terms and </span><span >conditions of this Agreement and the PUBLISHER Responsibilities, and (b) remain solely </span><span >responsible and liable to the ClickHunts and/or Advertiser(s), as applicable, for all of the </span><span >actions (or failure to act) of any such Sub-Affiliates or any other parties working with, for, or </span><span >under such Sub-Affiliates. PUBLISHER must keep records of all Sub-Affiliates and </span><span >campaign/offer programs distributed by Sub-Affiliates during the term that this Agreement </span><span >remains effective and for a period of one (1) year thereafter and provide such records to ClickHunts</span><span >&nbsp;Network upon request. PUBLISHER must immediately comply with any </span><span >demand made by the Click Hunts Network to terminate any Sub-Affiliate from </span><span >distributing Programs; failure to comply immediately with this demand may result in </span><span >PUBLISHERS termination from the Network, loss of revenue, and/or any other remedy </span><span >available to the ClickHunts at its discretion. PUBLISHER shall contractually bind, to all </span><span >terms of this Agreement, all of its Sub-Affiliates who perform services under this Agreement. </span><span >PUBLISHER shall require and confirm that all Sub-Affiliates affirmatively accept, through </span><span >verifiable means, this Agreement prior to obtaining access to the Programs. If a Sub-Affiliate </span><span >fails to adhere to the requirements set forth herein, in addition to other remedies available to ClickHunts</span><span >&nbsp;Network, PUBLISHER may be terminated at Advertiser’s sole discretion, and </span><span >PUBLISHER shall indemnify ClickHunts Network for any resulting third party claims </span><span >against it.</span></p>
-                                <p className='text-center'><span >12) COMPLIANCE: Click Hunts Network will actively monitor PUBLISHER activity using </span><span >a combination of its proprietary software and third party monitoring services. If ClickHunts</span><span > detects fraudulent activity, It is the obligation of the PUBLISHER to prove to ClickHunts</span><span > Network that they are not committing fraud. Click Hunts Network will hold </span><span >PUBLISHER payment in “Pending Status” until PUBLISHER has satisfactorily provided evidence </span><span >that PUBLISHER is not defrauding the system. ClickHunts Network flags accounts that: </span><span >Have click-through rates that are much higher than industry averages and where solid </span><span >justification is not evident; Have only click programs generating clicks with no indication by </span><span >site traffic that it can sustain the clicks reported; Have shown fraudulent leads as determined </span><span >by our clients or Use fake redirects, automated software, and/or fraud to generate clicks, </span><span >sales, calls and/or leads. If PUBLISHER is unable to prove to ClickHunts Network that </span><span >PUBLISHER is not committing fraud, PUBLISHER will forfeit its entire commission for all </span><span >programs and PUBLISHER’s account will be terminated. ClickHunts Network reserves </span><span >sole judgment in determining fraud.</span></p>
-                                <p className='text-center'><span >13) PUBLISHER OBLIGATIONS: PUBLISHER shall: NOT PROVIDE Incentivized traffic. (unless </span><span >specified per Insertion Order).This includes but is not limited to any spoofing, redirecting or </span><span >trafficking from adult related websites in an effort to gain traffic or websites that are point, </span><span >lottery, coupon or rewards based and encourage users to click on Advertisements or use </span><span >Advertisements to generate revenue for users to win points, get rewards, or other any other </span><span >incentive. NOT PROVIDE actions generated from content, email or websites that are not </span><span >subject matter related to the category of the Advertisement represented. Such websites must </span><span >be content-based (not a list of links or advertisements), be written in English, receive a </span><span >minimum of unique page views per month, have a top-level name and must not infringe on </span><span >any personal, intellectual property or copyrights. This can be waived only by SPECIFICALLY </span><span >providing the name of the proposed website to ClickHunts Network. Must Be able to </span><span >provide the name of the Website where the action was generated. This information is only </span><span >delivered to Click Hunts Network upon request, but MUST be made available in case </span><span >there is a dispute or problem with the lead. NOT PROVIDE inappropriate content, which </span><span >includes, but is not limited to, content that (i) promotes the use of alcohol, tobacco or illegal </span><span >substances, nudity, sex, pornography adult-oriented content such as phone sex or escort </span><span >services, expletives or inappropriate language, (ii) promotes violence or the use of illegal </span><span >substances or activities such as how to build a bomb, counterfeiting money and software </span><span >pirating (iii) promotes illegal or unethical activity, racism, hate, “spam”, mail fraud, gambling, </span><span >sweepstakes, pyramid schemes, or illegal advice (iv) is otherwise prohibited by Federal or </span><span >state law; and/or (v) will br/ing ClickHunts Network and/or its associated Advertisers </span><span >negative publicity. At no time, engage in, disseminate, promote or otherwise distribute any </span><span >Advertisement through the use of contextual media, specifically downloadable software (also </span><span >called adware, pop-up/pop-under technologies, plug-ins, robocalls, bots and other names as </span><span >applicable).</span></p>
+      <div class="terms-section">
+        <span class="term-number">7</span>
+        <span class="term-title">Advertising Guidelines</span>
+        <p>PUBLISHER may, in its complete discretion, reject, cancel or remove
+          at any time any Advertisement from the service for any reason without
+          prior notice to Click Hunts Network. PUBLISHER must notify ClickHunts
+          Network following the rejection, cancellation or removal of any
+          Advertisement from the service within 24 hours.</p>
+      </div>
 
-<br/>
-                                
-                                <p className='text-center'><span >14) EMAIL CAMPAIGNS: PUBLISHER further represents and warrants that with respect to </span><span >email campaigns transmitted by PUBLISHER for ClickHunts Network, PUBLISHER shall at </span><span >all times only use the Click Hunts Network email creative provided by Click Hunts </span><span >Network, PUBLISHER may submit customized email creatives to ClickHunts for review </span><span >and MUST wait for the approval and consent form Click Hunts Network before any email </span><span >drops commence. If PUBLISHER br/eaches this term ClickHunts Network has the </span><span >authority and right to terminate this agreement and any Insertion Order with PUBLISHER and </span><span >revoke all payments. PUBLISHER must maintain strict compliance with the Controlling the </span><span >Assault on Non-solicited Pornography and Marketing Act of 2003 (CAN-SPAM) and any </span><span >amendments and modifications thereto.</span></p><br/>
-                                
-                                <p className='text-center'><span >15) SMS MARKETING, AUTODIALERS, ROBOCALLS: Click Hunts Network does not </span><span >permit or authorize any PUBLISHER, Sub-Affiliate, or other third party to send text messages </span><span >or use any auto-dialer (as defined in the TCPA (defined below) as part of PUBLISHER </span><span >performance under this Agreement. EClickHunts Network will not make payment to any </span><span >PUBLISHER that sends text messages to generate Compensable Transactions. Click Hunts</span><span >&nbsp;Network reserves the right to monitor all PUBLISHERS and Sub-Affiliate activities to </span><span >ensure compliance with our SMS marketing policies, as described herein and otherwise </span><span >communicated to PUBLISHER(s) and Sub- affiliate(s). Click Hunts Network reserves the </span><span >right to terminate immediately and without notice any agreement, arrangement, or </span><span >relationship with any party that violates our SMS marketing policies. All PUBLISHERS and Sub-</span><span >Affiliates are responsible for complying with all federal, state, and local locals, rules, and </span><span >regulations governing all of their marketing activities, including but not limited to the </span><span >Telephone Consumer Protection Act (“TCPA”) and Federal Communications Commission rules </span><span >implementing the TCPA. PUBLISHER hereby understands and agrees that the TCPA makes it </span><span >unlawful to use any automatic telephone dialing system to make any call or send any text </span><span >message to any telephone number assigned to a cellular telephone service, unless the call is </span><span >made for emergency purposes or with the prior express consent of the called party. See 47 </span><span >USC § 227(b)(1)(a); 47 C.F.R. § 1200(a). PUBLISHER is solely responsible for ensuring that </span><span >each Sub-Affiliate complies with this Section 9. PUBLISHER agrees to indemnify, defend, and </span><span >hold ClickHunts Network harmless against all liability, loss, damages, claims or causes </span><span >of action, including reasonable legal fees and expenses, arising out of or related to your </span><span >br/each of this Section 9 or arising out of or related to any br/each of this Section 9 made by </span><span >any Sub-Affiliate working with or under you. PUBLISHER represents and warrants that: (i) this </span><span >Agreement has been duly and validly executed and delivered by PUBLISHER and constitutes </span><span >PUBLISHERS legal, valid and binding obligation fully enforceable against it under its terms; (ii) </span><span >PUBLISHERS performance will comply with this Agreement and all laws, rules and regulations </span><span >including, without limitation, the Gramm-Leach Bliley Act, 15 U.S.C. §§6801-6809, Regulation </span><span >P, 12 C.F.R. pt. 1016, Regulation Z, 12 C.F.R. 1026, the Electronic Transfer Act, 15 U.S.C </span><span >§1693, Regulation E, 12 C.F.R. pt. 205, the Telemarketing and Consumer Fraud and Abuse </span><span >Prevention Act, 15 U.S.C. §§6101-6108, the Telemarketing Sales Rule, 16 C.F.R. pt. 310, the </span><span >Fair Credit Reporting Act (U.S.C. §1681m(a)), Regulation V, 12 C.F.R. pt. 1022 the Federal </span><span >Trade Commission Act, the CAN-SPAM Act of 2003, the Telephone Consumer Protection Act </span><span >(42 U.S.C. 227), provisions relating to the National Do Not Call Registry ((16. C.F.R. Part 310) </span><span >and applicable state Do Not Call List requirements), the Truth-in-Lending Act (15 U.S.C. 1601 </span><span >et seq.), the Equal Credit Opportunity Act (15 U.S.C. 1691 et seq.), the Fair Debt Collection </span><span >Practices Act, the Dodd-Frank Wall Street Reform and Consumer Protection Act including but </span><span >not limited to Section 1031 and 1036, 12 U.S.C §§5531, 5536, Section 5 of the FTC Act, the </span><span >Home Mortgage Disclosure Act, the Real Estate Settlement Procedures Act, the Secure and </span><span >Fair Enforcement for Mortgage Licensing (SAFE) Act, the Fair Debt Collection Practices Act, the </span><span >Federal Communications Act, the California Financial Privacy Act and any other relevant local, </span><span >state,</span></p><br/>
-                                
-                                <p className='text-center'><span >federal or international laws (collectively, “Laws”); (iii) PUBLISHERS performance will not </span><span >violate or infringe any intellectual property or proprietary right of any third party; </span><span >(iv) PUBLISHER understands and agrees that ClickHunts Network will contract with other </span><span >Network affiliates in direct competition with PUBLISHER; (v) PUBLISHER will maintain all </span><span >documents and records to demonstrate compliance with Laws, and it will provide evidence of </span><span >such upon reasonable request; (vi) PUBLISHER will not engage in any SMS, email, phone and </span><span >similar telecommunication marketing campaigns under this Agreement without the prior </span><span >express written consent of ClickHunts Network; (vii) if applicable to PUBLISHERS </span><span >participation in the Network, PUBLISHER also undertakes, warrants and represents that it will </span><span >comply with all international legislation, including, without limitation, all provincial and federal </span><span >consumer protection and financial regulation legislation, CASL, the National Do Not Call List </span><span >Rules (“DNCL”), the Personal Information Protection and Electronic Documents Act (“PIPEDA”) </span><span >and provincial privacy legislation; (viii) PUBLISHER has obtained all necessary permits, </span><span >licenses, or other authorizations required by any law, regulations, or government or regulatory </span><span >authority for your business as conducted or as conducted during the term of this Agreement; </span><span >(ix) unless otherwise disclosed to Click Hunts Network, PUBLISHER is not the subject of </span><span >any investigation or prosecution by the Federal Trade Commission or any other federal or </span><span >state governmental or regulatory body or agency for your products or services and, to the </span><span >best of your knowledge, no such investigation or prosecution is threatened; (x) PUBLISHER </span><span >has disclosed the existence of any past federal or state decrees, orders, or consent </span><span >agreements, and any pending formal or informal government or private investigations or </span><span >lawsuits involving you and/or the officers, directors, or principals of your company to ClickHunts</span><span >&nbsp;Network prior to completing your online application via the PUBLISHER Admin Site; </span><span >(xi) PUBLISHER will promptly notify Clic kHunts Network if it becomes the subject of any </span><span >investigation or prosecution by the Federal Trade Commission, Consumer Financial Protection </span><span >Bureau or any other federal or state governmental or regulatory body or agency; and (xii) </span><span >PUBLISHER has security policies in place to ensure the security, integrity, and confidentiality </span><span >of non-public customer information, protecting it against anticipated threats, and guarding it </span><span >against unauthorized access or use, including administrative, technical, and physical </span><span >safeguards used in the collection, distribution, processing, protection, storage, use, </span><span >transmission, handling, or disposal of non-public customer information.</span></p><br/>
-                                
-                                <p className='text-center'><span >16) CLICK HUNTS REPRESENTATIONS AND WARRANTIES: The execution, delivery, </span><span >and performance of this Agreement by ClickHunts Network has been duly approved by </span><span >its board of directors or managing partners/members, and no further corporate action is </span><span >necessary on the part of Click Hunts Network to consummate the transactions </span><span >contemplated by this Agreement. </span><span >17) PUBLISHER REPRESENTATIONS AND WARRANTIES: Publisher represents and </span><span >warrants that: (1) the recipients of all email addresses and phone numbers used by </span><span >PUBLISHER in connection with this Agreement have manifested affirmative consent to receive </span><span >commercial emails, calls, or SMS text messages from PUBLISHER and none of the email </span><span >addresses were obtained through email harvesting or dictionary attacks; (2) PUBLISHER will </span><span >not fraudulently add actions or clicks or inflate actions or clicks by fraudulent traffic </span><span >generation (as determined solely by ClickHunts Network, such as pre-population of </span><span >forms or mechanisms not approved by Click Hunts Network); (3) PUBLISHER will not </span><span >attempt in any way to alter, modify, eliminate, conceal, or otherwise render inoperable or </span><span >ineffective the Site tags, source codes, links, pixels, modules or other data provided by or </span><span >obtained from ClickHunts Network that allows Click Hunts Network to measure ad </span><span >performance and provide its services and (4) all of PUBLISHER’s efforts associated with this </span><span >Agreement comply with the laws of the United States, and any other laws of any other jurisdictions </span><span >which are applicable to PUBLISHER. PUBLISHER will not </span><span >engage in or promote any illegal activities of any kind in association with this Agreement.</span></p><br/>
-                                
-                                <p className='text-center'><span >18) CONFIDENTIALITY: The terms of this Agreement are confidential and shall not be </span><span >disclosed to any third party except where required by law. All information submitted by end-</span><span >user customers pursuant to this Agreement is proprietary to and owned by ClickHunts </span><span >Network. Such customer information is confidential and may not be disclosed by Click Hunts</span><span >&nbsp;Network or PUBLISHER. In addition, PUBLISHER acknowledges that all non-public </span><span >information, data and reports received from ClickHunts Network hereunder or as part of </span><span >the services hereunder is proprietary to and owned by Click Hunts Network. </span><span >(“Confidential Information”). PUBLISHER agrees not to disclose the terms of this Agreement, </span><span >including the CPA value, to any third party without the express written consent of ClickHunts</span><span >&nbsp;Network, and that such constitutes Confidential Information. All Confidential </span><span >Information is or may be protected by copyright, trademark, trade secret and other </span><span >intellectual property law, as appropriate. PUBLISHER agrees not to reproduce, disseminate, </span><span >sell, distribute or commercially exploit any proprietary or Confidential Information in any </span><span >manner. These non-disclosure obligations shall survive the termination of this Agreement for a </span><span >period of five (5) years. This section does not bind Click Hunts Network or PUBLISHER in </span><span >the event such information is required to be disclosed by operation of law. If a request is </span><span >made of PUBLISHER to disclose such information, PUBLISHER must immediately inform ClickHunts</span><span > Network via written notice sufficiently promptly to allow ClickHunts </span><span >Network to seek a Protective Order prior to the time commanded to produce or disclose such </span><span >Confidential Information, and PUBLISHER agrees to cooperate in whatever way ClickHunts</span><span >&nbsp;Network requests to attempt to protect that information from disclosure by </span><span >operation of law. Subject to prior approval by PUBLISHER, ClickHunts Network may </span><span >publicly announce its contractual relationship with PUBLISHER, which includes being on a </span><span >listing of Click Hunts Network publishers in general corporate materials and in industry </span><span >standard press releases.</span></p><br/>
-                                
-                                <p className='text-center'><span >19) NON-DISCLOSURE: As applicable, all information about consumers (“Customer </span><span >Information”) submitted to the PUBLISHER by reason of PUBLISHERS participation in </span><span >distributing a Program through the ClickHunts Network is proprietary to and owned by </span><span >the Click Hunts Network and/or its Advertiser(s). Such Customer Information is </span><span >confidential and may not be disclosed by you or used for any purpose by you except as may </span><span >be permitted by this Agreement or the Program Terms for any particular Program. Each Party </span><span >agrees to use the other Party’s Confidential Information (as defined below) solely for the </span><span >purposes contemplated by this Agreement, and to refrain from disclosing the other Party’s </span><span >Confidential Information or the Company’s Advertisers’ Confidential Information (including </span><span >Customer Information) to any third-party, unless (a) any disclosure is necessary and permitted </span><span >in connection with the receiving party’s performance of its obligations or exercise of its rights </span><span >under this Agreement; (b) any disclosure is required by applicable law; provided, that the </span><span >receiving party uses reasonable efforts to give the disclosing party reasonable advance notice </span><span >thereof so as to afford the disclosing party an opportunity to intervene and seek an order or </span><span >other appropriate relief for the protection of its Confidential Information from any </span><span >unauthorized use or disclosure; or (c) any disclosure is made with the consent of the </span><span >disclosing party. As used in this Agreement, “Confidential Information” means any and all oral </span><span >or written information that is identified as confidential and is provided by one Party to the </span><span >other, or information which, under the circumstances surrounding the disclosure, reasonably </span><span >ought to be treated as confidential.</span></p><br/>
-                                
-                                <p className='text-center'><span >20) NON-CIRCUMVENTION: During the term that this Agreement remains effective and for a </span><span >period of six (6) months after termination of this Agreement for any reason, PUBLISHER agrees </span><span >and acknowledges that, it will not directly engage, contract with, work with, license with, enter </span><span >into and/or execute any performance-based online advertising and/or marketing relationship </span><span >with any ADVERTISERS within the ClickHunts Network. In the event an PUBLISHER </span><span >contacts ADVERTISER directly and ADVERTISER determines then or at any later time that such </span><span >PUBLISHER is an PUBLISHER within the Click Hunts Network, then ADVERTISER shall </span><span >notify such PUBLISHER immediately that the PUBLISHER must work with ADVERTISER through </span><span >the ClickHunts Network and immediately halt any marketing campaigns being </span><span >conducted directly through such PUBLISHER. ADVERTISER understands and agrees that if </span><span >ADVERTISER violates its obligations to Click Hunts Network that Click Hunts will </span><span >suffer irreparable injury and shall be entitled to: (a) liquidated damages in the amount of fifty </span><span >percent (50%) of the gross revenues resulting from sales conducted by ADVERTISER through </span><span >the advertising and/or marketing efforts of such other online interactive marketing service </span><span >providers or PUBLISHERS as described herein, (b) injunctive relief, and (c) any other remedies </span><span >available to ClickHunts at law or in equity.</span></p>
-                                <p className='text-center'><span >21) DISCLAIMER OF WARRANTIES: Click Hunts Network PROVIDES ITS SITES AND </span><span >THE SITES OF ITS AFFILIATES AND PARTNERS, AND ALL ITS SERVICES AND THE SERVICES OF </span><span >ITS AFFILIATES AND PARTNERS, AS PERFORMED HEREUNDER, ON AN “AS IS,” “WHERE IS” AND </span><span >“AS AVAILABLE” BASIS. ClickHunts Network DISCLAIMS ALL WARRANTIES OF ANY KIND, </span><span >WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTY OF </span><span >MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE AND IMPLIED WARRANTIES </span><span >ARISING FROM COURSE OF DEALING OR COURSE OF PERFORMANCE.</span></p><br/>
-                                
-                                <p className='text-center'><span >22) LIMITATIONS OF LIABILITY: IN NO EVENT SHALL ClickHunts Network BE LIABLE </span><span >FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, </span><span >WITHOUT LIMITATION, FOR BR/EACH OF CONTRACT, WARRANTY, NEGLIGENCE OR STRICT</span><br />
-                                    <span >LIABILITY), OR FOR INTERRUPTED COMMUNICATIONS, LOSS OF USE, LOST BUSINESS, LOST </span><span >DATA OR LOST PROFITS, ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT. UNDER </span><span >NO CIRCUMSTANCES SHALL Click Hunts Network BE LIABLE TO PUBLISHER OR ANY</span><br />
-                                    <span >THIRD PARTIES FOR AN AMOUNT GREATER THAN THE AMOUNTS PAID BY ClickHunts </span><span >Network TO PUBLISHER DURING THE PRIOR THREE MONTHS.</span></p><br/>
-                                
-                                <p className='text-center'><span >23) MUTUAL INDEMNIFICATION: Each party agrees to indemnify, defend and hold </span><span >harmless the other party and its employees, agents, officers and directors, against any and all </span><span >claims, causes of actions, judgments, demands, damages, losses or liabilities, including costs </span><span >and expenses (including reasonable attorneys fees and costs of suit), arising out of or relating </span><span >to (a) any claim based upon infringement of copyright, trademark, patent, or trade secret or </span><span >other intellectual property right of any third party; (b) any claim, representation, or statement </span><span >made in the Advertisement; (c) any br/each of any representation or warranty contained in this </span><span >Agreement.</span></p><br/>
-                                
-                                <p className='text-center'><span >24) DISPUTE RESOLUTION: If any dispute arises under this Agreement, the Parties agree to </span><span >first try to resolve the dispute with the help of a mutually agreed upon mediator in the </span><span >following location: State of Virginia, Sarasota County, USA. Any costs and fees other than </span><span >attorneys’ fees associated with the mediation shall be shared equally by the parties. If it </span><span >proves impossible to arrive at a mutually satisfactory solution through mediation, the Parties </span><span >agree to submit the dispute to binding arbitration in the following location: State of Virginia, </span><span >Sarasota County , USA. The Parties agree that the binding arbitration will be conducted under </span><span >the rules of the American Arbitration Association. Judgment upon the award rendered by the </span><span >arbitrator may be entered in any court with proper jurisdiction. If any litigation or arbitration is </span><span >absolutely necessary to enforce this Agreement or the terms thereof, the prevailing Party shall </span><span >be entitled to reimbursement by the other Party for reasonable attorneys’ fees, costs and </span><span >expenses. This Agreement will be governed by the laws of the State of Virginia.</span></p><br/>
-                                
-                                <p className='text-center'><span >25) NO ASSIGNMENT: Neither Party shall have the right to assign or otherwise transfer its </span><span >rights and obligations under this Agreement except with the prior written consent of the other </span><span >Party; provided, however, that a successor in interest by merger, by operation of law, </span><span >assignment, purchase or otherwise of all or substantially all the business of a Party may </span><span >acquire its rights and obligations hereunder. Any prohibited assignment shall be null and void.</span></p><br/>
-                                
-                                <p className='text-center'><span >26) INDEPENDENT CONTRACTOR: Each party is an independent contractor. Except as set </span><span >forth in this Agreement, neither party is authorized or empowered to obligate the other or </span><span >incur any costs on behalf of the other without the party’s prior written consent.</span></p><br/>
-                                
-                                <p className='text-center'><span >27) SEVERABILITY: If any term, provision, covenant, or condition of this Agreement is held </span><span >by a court of competent jurisdiction to be invalid or unenforceable, the remainder of the </span><span >Agreement shall remain in full force and effect and shall in no way be affected or invalidated.</span></p>
-                                <p className='text-center'><span >28) AGREEMENT IN COUNTERPARTS: This agreement may be signed by ClickHunts </span><span >Network and PUBLISHER in counterparts, and facsimile signatures shall have the same force </span><span >and effect as an original signature.</span></p><br/>
-                                
-                                <p className='text-center'><span >29) FORCE MAJEURE: Neither Party will be liable for, or will be considered to be in br/each of </span><span >this Agreement on account of, any delay or failure to perform as required by this Agreement </span><span >as a result of any causes or condition s that are beyond such Party’s reasonable control and </span><span >that such Party is unable to overcome through the exercise of commercially reasonable </span><span >diligence. If any force majeure event occurs (which shall include, without limitation, acts of </span><span >God, fire, explosion, vandalism, storm or other natural occurrences, any conflicting order, </span><span >direction, action or request of the United States government (including, without limitation, </span><span >state and local governments) or of any regulatory department, agency, commission, court, </span><span >bureau, corporation or other instrumentality, or of any civil or military authority, national </span><span >emergencies, insurrections, riots, wars, strikes, lockouts, work stoppages or other such labor </span><span >difficulties), the affected Party will give prompt written notice to the other Party and will use </span><span >commercially reasonable efforts to minimize the impact of such event. Notwithstanding the </span><span >foregoing, the Parties’ obligations to one another shall be excused and/or postponed during </span><span >and only for the duration of the applicable force majeure event and shall resume as soon as </span><span >practicable after the force majeure event has ended.</span></p><br/>
-                                
-                                <p className='text-center'><span >30) NO THIRD PARTY BENEFICIARIES: This Agreement is for the sole benefit of the Parties </span><span >to this Agreement and their successors and any permitted assigns, and nothing expressed or </span><span >implied in this Agreement shall give or be construed to give to any person or entity, other </span><span >than the Parties to this Agreement and their respective successors and assigns, any legal or </span><span >equitable rights.&nbsp;</span></p>
-                                <p className='text-center'><span >31) NOTICES: Any notice, communication or statement (collectively, “Notice”) relating to this </span><span >Agreement shall be in writing and deemed effective: (i) upon delivery when delivered in </span><span >person; (ii) upon transmission when delivered by verified electronic mail transmission; or (iii) </span><span >when delivered by registered or certified mail, postage prepaid, return receipt requested or by </span><span >a nationally recognized overnight courier service, to each Party at the address set forth in this </span><span >agreement or at such different address as may be designated by such Party by written notice </span><span >to the other Party.</span></p><br/>
-                                
-                                <p className='text-center'><span >32) TERMINATION: This Agreement may be terminated by either Party upon two (2) </span><span >business days notice, or without notice by the ClickHunts Network if Click Hunts </span><span >Network believes, in its sole discretion, that you have violated this Agreement (including any </span><span >representations and warranties herein), or any applicable law, rule, or regulation, or have </span><span >engaged in fraud. This Agreement shall terminate immediately upon the dissolution or </span><span >insolvency of either Party. ClickHunts Network reserves the right, in its sole and </span><span >absolute discretion, to terminate a campaign/offer program and remove any advertisements </span><span >at any time for any reason. ClickHunts also reserves the right to suspend or terminate </span><span >Your access to the Network at any time without notice due to fraudulent activity. Termination </span><span >notice may be provided via email, and will be effective immediately. All revenue due to </span><span >PUBLISHERS, subject to the terms of this Agreement, will be paid during the next billing cycle. </span><span >If PUBLISHER commits fraud or br/eaches this Agreement (as determined by CLICK HUNTS</span><span >&nbsp;NETWORK in its sole discretion) then payment is revoked as determined solely by </span><span >CLICKHUNTS. If your email address is not operative, ClickHunts Network will </span><span >attempt to send the termination notice email to your last known address or email address </span><span >shall suffice as termination notice hereunder.</span></p><br/>
-                                
-                                <p className='text-center'><span >33) CALIFORNIA RIGHTS POLICY. </span><br />
-                                    <span >A. California Consumer Privacy Rights (CCPA) California law provides California residents with </span><span >the following privacy rights: Right to access personal information: Individuals exercising this </span><span >right may request access to the categories and specific pieces of their personal information we </span><span >have collected in the prior 12-month period. Individuals exercising this right may receive their </span><span >personal information, when provided electronically, in a readily-useable format. Right to </span><span >deletion: Individuals exercising this right can ask us to delete their personal information we </span><span >have collected, though we may be permitted to retain personal information for certain </span><span >purposes. Right to disclosure: Individuals exercising this right can receive additional </span><span >information regarding the sources from which we collect information, the purposes for which </span><span >we collect and share personal information, the information of theirs we hold, and the </span><span >categories of parties with whom we share their information. Right to opt-out of sales: As </span><span >permitted by applicable law, we may share your personal information for monetary or other </span><span >valuable consideration (under California law, this is considered a “sale”). You may opt-out of </span><span >such a “sale” of your personal information to third parties. You can exercise your right to opt-</span><span >out buy following instructions in Section 5 (“OPT OUT”).Right to be free from discrimination: </span><span >Users may freely exercise these rights without fear of being denied goods or </span><span >services. Currently, this law specifically applies to California residents. If you are a resident of </span><span >California, and would like to exercise one of your rights, please contact us at </span><span >https://expressrevenue.com. You may designate an authorized agent to request the exercise </span><span >of one or more of these rights on your behalf. Please note all consumer requests are subject to </span><span >verification and there may be circumstances where we do not honor your request, as </span><span >permitted under the law. We may verify your request by asking for additional information </span><span >about how you found out about ClickHunts Network, who referred you to Click Hunts</span><span >&nbsp;Network, to make a request (which Publisher, Querier or Partner referred you to us) </span><span >and which websites you made the same requests to; and we will need to be able to verify with </span><span >that Publisher or Partner as to the validity of your request first. If you are using an authorized </span><span >agent, such requests are subject to the same criteria. </span><br />
-                                    <span >B. California’s “Shine the Light” Law Additionally, through California’s “Shine the Light” law, </span><span >California residents who provide personal information in obtaining products or services for </span><span >personal, family, or household use are entitled to either: (1) a list detailing the categories of </span><span >information shared and the entities to which such information was provided; or (2) to be </span><span >notified of a mechanism by which a consumer may opt-out of having their information shared </span><span >with third parties.</span></p><br/>
-                                
-                                <p className='text-center'><span >34) GDPR COMPLIANCE: PUBLISHERS who hold EU and UK ‘personal data’ must fully comply </span><span >with the Privacy and Electronic Communications (EC Directive) Regulations 2003, the </span><span >Electronic EU Regulations 2011 and the EU General Data Protection Regulations (GDPR) For </span><span >more information on (GDPR) please visit – https://gdpr.eu&nbsp;</span></p><br/>
-                                
-                                <p className='text-center'><span >35) ENTIRE AGREEMENT: This constitutes the entire agreement between the parties and </span><span >supersedes any prior or inconsistent agreements, negotiations, representations and promises, </span><span >written or oral, regarding the subject matter. No modification, course of conduct, amendment, </span><span >supplement to or waiver of this Agreement or any provisions hereof shall be binding upon the </span><span >parties unless made in writing and duly signed by both parties.</span></p><br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                
+      <div class="terms-section">
+        <span class="term-number">8</span>
+        <span class="term-title">Term & Target Launch</span>
+        <p>Term will be as noted in the (Insertion Order). Agreement may
+          continue thereafter by mutual consent but may be terminated by either
+          party for any reason whatsoever. If Budget caps are provided to
+          PUBLISHER and PUBLISHER does not fulfill set allocation ClickHunts has
+          full rights to reassign any used allocation.</p>
+        <p>All legitimate revenue due to PUBLISHER will be paid during the next
+          billing cycle. If PUBLISHER defrauds the ClickHunts Network, then
+          payment is revoked as determined solely by Click Hunts Network.</p>
+      </div>
 
+      <div class="terms-section">
+        <span class="term-number">9</span>
+        <span class="term-title">Payment</span>
+        <p>PUBLISHER will invoice Click Hunts Network on a monthly basis or per
+          agreed upon payment terms set forth in Insertion Order at the payout
+          rates reflected in the Insertion Order. The invoice will reflect
+          delivery of final qualified action numbers that are based upon numbers
+          reported by ClickHunts Network to PUBLISHER pursuant to the terms of
+          this Agreement.</p>
+        <p>All PUBLISHERS are required to submit a valid signed W9 or W8. These
+          documents can be found on the INTERNAL REVENUE SERVICE (IRS) website.
+          Every PUBLISHER Account must have a unique, valid taxpayer
+          identification number (TIN) or valid Social Security number on file
+          with the ClickHunts Network.</p>
+        <p>All payments are based on actual figures as defined, accounted and
+          audited by the Click Hunts Network. In the event ClickHunts Network
+          does not receive payment from it's ADVERTISER(S) for any reason
+          including, but not limited to, traffic provided by PUBLISHER or
+          PUBLISHERS third party partners or if Advertiser charges back or
+          requests refund of payments, or alleges that any Event was fraudulent
+          or was a result of a violation of an applicable law, rule or
+          regulation, ClickHunts Network does not guarantee payments on behalf
+          of the Advertiser.</p>
+        <p>Click Hunts Network will not pay for any Events that occur before a
+          Program is initiated, after a Program terminates or for actions for a
+          Program that the PUBLISHER was not invited to or is not assigned to
+          promote. ClickHunts Network will not be responsible to compensate You
+          for actions that are not recorded due to your error. Click Hunts
+          Network shall have no obligation to make payment to PUBLISHER.</p>
+      </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </main>
+      <div class="terms-section">
+        <span class="term-number">10</span>
+        <span class="term-title">Payment Terms</span>
+        <p>ClickHunts Network shall make all payments to PUBLISHER within 30
+          days Net (30) as per standard Network terms of the Invoice Date unless
+          otherwise specified and agreed and signed Insertion Order states. All
+          payments made to PUBLISHER do not include, and PUBLISHER shall pay,
+          any sales, use or similar tax associated with such payment. All
+          Payment service charges such as bank transfer fees are the
+          responsibility of the PUBLISHER.</p>
+        <p>All past due amounts shall accrue interest at the rate of one and
+          one-half percent (1.5%) per month
+          </p>
         </div>
+      </div>
+    </div>
     )
 }
 

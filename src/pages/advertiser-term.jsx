@@ -8,230 +8,419 @@ const AdvertiserTerm = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md mb-10">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Terms and Conditions</h1>
-      <p className="mb-6 text-gray-600">
-        This Master Service Agreement ("Agreement") governs your use of ClickHunts's online advertising network ("Network"). 
-        Please read these terms carefully before using our services.
-      </p>
+    <>
 
-      {/* Accordion sections */}
-      <div className="space-y-4">
-        {/* Section A */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionA')}
-          >
-            <span>Terms and Conditions</span>
-            <span>{activeSection === 'sectionA' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionA' && (
-            <div className="p-4 bg-white">
-              <p className="text-gray-700">
-                The terms and conditions contained in this Master Service Agreement govern Advertiser's use of 
-                ClickHunts's online advertising network of marketing affiliates to distribute advertisements 
-                within the U.S. that promote Advertiser's products, services, or websites as set out in the 
-                Insertion Orders (IOs). This Agreement supersedes any prior agreements between ClickHunts and 
-                the Advertiser and governs all existing IOs.
-              </p>
-            </div>
-          )}
-        </div>
 
-        {/* Section B */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionB')}
-          >
-            <span>Creation and Distribution of Advertiser Content</span>
-            <span>{activeSection === 'sectionB' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionB' && (
-            <div className="p-4 bg-white">
-              <ol className="list-decimal ml-6 space-y-4">
-                <li className="text-gray-700">
-                  ClickHunts will make Advertiser content available for distribution. Advertiser shall create and 
-                  deliver all content at their expense. Changes made by ClickHunts must be approved in writing. 
-                  ClickHunts requires 48 hours to implement changes.
-                </li>
-                <li className="text-gray-700">
-                  ClickHunts reserves the right to reject or remove any Advertiser Campaigns that do not meet 
-                  standards or comply with this Agreement. ClickHunts has no obligation to monitor Advertiser 
-                  Campaigns for compliance with laws.
-                </li>
-                <li className="text-gray-700">
-                  For email distribution, Advertiser must comply with the CAN-SPAM Act and maintain an up-to-date 
-                  suppression list of individuals who have requested not to receive commercial email.
-                </li>
-                <li className="text-gray-700">
-                  For telephone or text message marketing, Advertiser shall comply with the Telephone Consumer 
-                  Protection Act, Telemarketing Sales Rule, and obtain "prior express written consent" for all recipients.
-                </li>
-                <li className="text-gray-700">
-                  Advertiser represents they own all intellectual property used or have obtained sufficient licensing rights. 
-                  Advertiser grants ClickHunts a non-exclusive, royalty-free license to use, distribute, and market all 
-                  Advertiser Campaigns.
-                </li>
-              </ol>
-            </div>
-          )}
-        </div>
+<style jsx>{`
 
-        {/* Section C */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionC')}
-          >
-            <span>Payment and Deposit</span>
-            <span>{activeSection === 'sectionC' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionC' && (
-            <div className="p-4 bg-white">
-              <ol className="list-decimal ml-6 space-y-4">
-                <li className="text-gray-700">
-                  Advertiser agrees to pay on a Cost per Action (CPA) basis. An "Action" means certain acts of an 
-                  Internet user, including clicks, landing on Advertiser's website, and completing forms or purchases.
-                </li>
-                <li className="text-gray-700">
-                  ClickHunts may conduct credit checks and request deposits or pre-payments for Commissions. Deposits 
-                  may be applied against invoices or kept as security.
-                </li>
-                <li className="text-gray-700">
-                  Time is of the essence for all payment terms. Payment not made within 30 days accrues interest at 
-                  1.5% per month. Advertiser is responsible for all collection costs.
-                </li>
-              </ol>
-            </div>
-          )}
-        </div>
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
 
-        {/* Section D */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionD')}
-          >
-            <span>Reporting</span>
-            <span>{activeSection === 'sectionD' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionD' && (
-            <div className="p-4 bg-white">
-              <ol className="list-decimal ml-6 space-y-4">
-                <li className="text-gray-700">
-                  Reporting on Actions is the responsibility of both parties. Invoicing will be based on the highest 
-                  gross counts from electronic reporting systems.
-                </li>
-                <li className="text-gray-700">
-                  Disputed Actions must be reported in writing by the payment due date, or the right to dispute is waived. 
-                  ClickHunts's determination is final and binding.
-                </li>
-                <li className="text-gray-700">
-                  Advertiser must retain books and records for at least 3 months after each Campaign. ClickHunts has the 
-                  right to audit these records.
-                </li>
-              </ol>
-            </div>
-          )}
-        </div>
-        
-        {/* Section E */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionE')}
-          >
-            <span>Representations, Warranties, and Indemnification</span>
-            <span>{activeSection === 'sectionE' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionE' && (
-            <div className="p-4 bg-white">
-              <ol className="list-decimal ml-6 space-y-4">
-                <li className="text-gray-700">
-                  Each party represents they are a valid corporation with the authority to execute this Agreement.
-                </li>
-                <li className="text-gray-700">
-                  Advertiser is solely responsible for all content and warrants no part shall infringe on third-party rights, 
-                  violate laws, or contain malicious code.
-                </li>
-                <li className="text-gray-700">
-                  Advertiser warrants it is not under investigation by any regulatory agencies and will disclose any past 
-                  decrees or orders.
-                </li>
-                <li className="text-gray-700">
-                  Advertiser agrees to indemnify and hold harmless ClickHunts for any claims arising from Advertiser's breach, 
-                  content, or products promoted.
-                </li>
-                <li className="text-gray-700">
-                  ClickHunts may require Advertiser to maintain comprehensive liability insurance and name ClickHunts as an 
-                  additional insured.
-                </li>
-              </ol>
-            </div>
-          )}
-        </div>
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-        {/* Additional Sections */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <button 
-            className="w-full p-4 text-left font-semibold bg-gray-50 hover:bg-gray-100 flex justify-between items-center"
-            onClick={() => toggleSection('sectionAdditional')}
-          >
-            <span>Additional Terms</span>
-            <span>{activeSection === 'sectionAdditional' ? '−' : '+'}</span>
-          </button>
-          {activeSection === 'sectionAdditional' && (
-            <div className="p-4 bg-white">
-              <div className="space-y-4">
-                <p className="font-medium text-gray-800">Assignment</p>
-                <p className="text-gray-700 ml-4">
-                  Advertiser may not assign this Agreement without ClickHunts's prior written consent.
-                </p>
-                
-                <p className="font-medium text-gray-800">Limitations on Liability</p>
-                <p className="text-gray-700 ml-4">
-                  ClickHunts shall not be liable for special, indirect, or consequential damages. Liability is limited 
-                  to the net amount received within the previous six months.
-                </p>
-                
-                <p className="font-medium text-gray-800">Non-Circumvention</p>
-                <p className="text-gray-700 ml-4">
-                  During the term and for six months after, Advertiser agrees not to directly engage with any Affiliate 
-                  within the ClickHunts Network.
-                </p>
-                
-                <p className="font-medium text-gray-800">Confidentiality</p>
-                <p className="text-gray-700 ml-4">
-                  Each party agrees to protect the confidential information of the other party and limit disclosure to 
-                  those who need to know.
-                </p>
-                
-                <p className="font-medium text-gray-800">Term and Termination</p>
-                <p className="text-gray-700 ml-4">
-                  This Agreement is for 12 months and automatically renews unless terminated with 10 days' notice. 
-                  Either party may terminate with 10 days' written notice.
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-      {/* <div className="mt-8 p-4 border-t border-gray-200">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-          <div className="mb-4 sm:mb-0">
-            <p className="text-sm text-gray-600">© 2025 ClickHunts Network, LLC. All Rights Reserved.</p>
-          </div>
-          <div>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg">
-              Accept Terms
-            </button>
-          </div>
-        </div>
-      </div> */}
-    </div>
+.logo {
+    height: 50px;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    margin-left: 30px;
+}
+
+.nav-button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(4, 137, 152, 0.2);
+}
+
+/* Title Section */
+.page-title {
+    background: linear-gradient(rgba(4, 137, 152, 0.9), rgba(4, 137, 152, 0.9));
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.page-title p {
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.terms-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+.terms-section {
+    margin-bottom: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.terms-section h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-light);
+}
+
+.terms-section h3 {
+    margin: 20px 0 10px;
+    color: var(--text-dark);
+}
+
+.terms-section p, .terms-section li {
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.terms-section ul, .terms-section ol {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.terms-section li {
+    margin-bottom: 8px;
+}
+
+.last-updated {
+    text-align: right;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 40px;
+}
+
+/* Mobile Menu Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .nav-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-title h1 {
+        font-size: 2em;
+    }
+
+    .terms-section {
+        padding: 20px;
+    }
+}`}
+</style>
+
+    <section class="page-title">
+            <h1 className='font-bold'>Advertiser Terms and Conditions</h1>
+            <p>Please review our terms and conditions carefully before
+                partnering with the ClickHunts Network.</p>
+      </section>
+
+        <main class="terms-container">
+            <div class="terms-section">
+                <h2 className='font-bold'>1. Introduction</h2>
+                <p>These Terms and Conditions ("Terms") govern the relationship
+                    between advertisers ("Advertiser," "you," or "your") and
+                    Click Hunts Network ("ClickHunts," "we," "us," or "our"). By
+                    registering as an Advertiser or using our services, you
+                    agree to comply with these Terms.</p>
+                <p>ClickHunts is a performance-based affiliate network committed
+                    to transparency and results-driven marketing solutions. We
+                    connect Advertisers with Publishers to promote products and
+                    services through various marketing channels.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>2. Account Registration and Eligibility</h2>
+                <p>To become an Advertiser with ClickHunts Network, you
+                    must:</p>
+                <ul>
+                    <li>Complete the registration process through our
+                        platform</li>
+                    <li>Provide accurate and complete information about your
+                        business</li>
+                    <li>Be at least 18 years of age</li>
+                    <li>Have the legal authority to bind your business to these
+                        Terms</li>
+                    <li>Maintain the security of your account credentials</li>
+                </ul>
+                <p>ClickHunts reserves the right to approve or reject any
+                    application at our sole discretion. We may request
+                    additional information or documentation to verify your
+                    identity or business details.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>3. Advertiser Responsibilities</h2>
+                <p>As an Advertiser, you agree to:</p>
+                <ul>
+                    <li>Provide accurate and compliant marketing materials for
+                        your offers</li>
+                    <li>Ensure all promoted products and services comply with
+                        applicable laws and regulations</li>
+                    <li>Honor all conversions that meet the criteria specified
+                        in your offer terms</li>
+                    <li>Maintain sufficient funds in your account to cover
+                        commission payments</li>
+                    <li>Respond promptly to communications from ClickHunts
+                        regarding your campaigns</li>
+                    <li>Work collaboratively with your dedicated account
+                        manager</li>
+                    <li>Update your account information promptly if any changes
+                        occur</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>4. Campaign Management</h2>
+                <h3>4.1 Campaign Creation</h3>
+                <p>Advertisers can create campaigns through the ClickHunts
+                    platform. Each campaign must include:</p>
+                <ul>
+                    <li>Clear offer details and conversion requirements</li>
+                    <li>Commission structure and payment terms</li>
+                    <li>Approved marketing materials and guidelines</li>
+                    <li>Target audience specifications</li>
+                    <li>Any geographic or traffic source restrictions</li>
+                </ul>
+
+                <h3>4.2 Campaign Changes</h3>
+                <p>You may modify your campaigns with reasonable notice.
+                    However, substantial changes to commission rates, offer
+                    terms, or tracking mechanisms require advance notification
+                    to ClickHunts and affected Publishers.</p>
+
+                <h3>4.3 Campaign Termination</h3>
+                <p>ClickHunts reserves the right to pause or terminate campaigns
+                    that:</p>
+                <ul>
+                    <li>Violate these Terms or applicable laws</li>
+                    <li>Generate fraudulent or low-quality traffic</li>
+                    <li>Receive consistent negative feedback from Publishers or
+                        customers</li>
+                    <li>Present risk to ClickHunts' reputation or business
+                        relationships</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>5. Payments and Billing</h2>
+                <h3>5.1 No Setup Fees</h3>
+                <p>In line with our commitment to transparency, ClickHunts does
+                    not charge setup fees for advertiser accounts or
+                    campaigns.</p>
+
+                <h3>5.2 Performance-Based Model</h3>
+                <p>Advertisers only pay for tangible, high-quality results as
+                    defined in their campaign terms (e.g., leads, sales,
+                    installations).</p>
+
+                <h3>5.3 Payment Terms</h3>
+                <p>Advertisers agree to:</p>
+                <ul>
+                    <li>Fund their accounts in advance for CPA/CPL
+                        campaigns</li>
+                    <li>Maintain sufficient balance to cover anticipated
+                        commission payments</li>
+                    <li>Pay all valid conversions tracked through our
+                        system</li>
+                    <li>Settle any outstanding balances within the agreed
+                        payment terms</li>
+                </ul>
+
+                <h3>5.4 Disputed Transactions</h3>
+                <p>If you believe certain conversions are invalid, you must
+                    report them within 15 days of occurrence. ClickHunts will
+                    investigate and make a determination based on available data
+                    and our fraud detection systems.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>6. Prohibited Activities</h2>
+                <p>Advertisers must not engage in or promote:</p>
+                <ul>
+                    <li>Illegal products, services, or activities</li>
+                    <li>Content that infringes on intellectual property
+                        rights</li>
+                    <li>Deceptive or misleading marketing practices</li>
+                    <li>Spyware, malware, or other harmful technologies</li>
+                    <li>Adult content without proper age verification</li>
+                    <li>Gambling without proper licensing</li>
+                    <li>Products that make unsubstantiated health claims</li>
+                    <li>Activities that violate ClickHunts' acceptable use
+                        policies</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>7. Term and Termination</h2>
+                <p>These Terms remain in effect as long as you maintain an
+                    active Advertiser account with ClickHunts. Either party may
+                    terminate the relationship:</p>
+                <ul>
+                    <li>With 30 days written notice for any reason</li>
+                    <li>Immediately for material breach of these Terms</li>
+                    <li>Immediately if the other party becomes insolvent or
+                        files for bankruptcy</li>
+                </ul>
+                <p>Upon termination:</p>
+                <ul>
+                    <li>All active campaigns will be discontinued</li>
+                    <li>Advertiser remains responsible for all valid conversions
+                        occurring before termination</li>
+                    <li>Any remaining balance after settling outstanding
+                        payments will be refunded</li>
+                    <li>Access to the ClickHunts platform will be revoked</li>
+                </ul>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>8. Confidentiality and Data Protection</h2>
+                <p>Both parties agree to:</p>
+                <ul>
+                    <li>Maintain the confidentiality of business information
+                        shared during the partnership</li>
+                    <li>Comply with applicable data protection and privacy
+                        laws</li>
+                    <li>Implement appropriate security measures to protect
+                        personal data</li>
+                    <li>Process customer data only for legitimate business
+                        purposes related to the campaigns</li>
+                </ul>
+                <p>Advertisers must provide clear privacy policies and obtain
+                    necessary consents for data collection and processing
+                    activities related to their campaigns.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2 className='font-bold'>9. Intellectual Property</h2>
+                <p>Advertisers retain ownership of </p>
+            </div>
+        </main>
+
+    </>
   );
 };
 
