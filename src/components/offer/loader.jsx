@@ -1,9 +1,8 @@
-import React from 'react'
-
+import mainlogo from "../../assets/ClickHunts.png"
 const Loader = () => {
   return (
     <>
-        <img src="https://clickhunts.com/wp-content/uploads/2024/02/cropped-Click-Hunts-Favicon-192x192.png" alt="clichunts loading screen" className='w-16 animate-fade'/>
+        <img src={mainlogo} alt="clichunts loading screen" className='w-48 animate-fade'/>
     </>
   )
 }

@@ -2,14 +2,7 @@ import React from 'react';
 
 const PartnersShowcase = () => {
   const brandColor = '#048998';
-  // const partners = [
-  //   { name: "Carter's", image: "/assets/partner/carters.svg" },
-  //   { name: "Upwork", image: "/assets/partner/upwork.svg" },
-  //   { name: "Tesco Mobile", image: "/assets/partner/tesco-1.svg" },
-  //   { name: "Walmart", image: "/assets/partner/walmart.svg" },
-  //   { name: "LightInTheBox", image: "/assets/partner/lightinthebox.svg" },
-  //   { name: "Squarespace", image: "/assets/partner/squarespace.svg" }
-  // ];
+  
   return (
     <div className="w-full py-20 bg-gradient-to-b from-[#F8F8FB] to-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -27,75 +20,115 @@ const PartnersShowcase = () => {
         <div className="relative overflow-hidden">
           {/* First row - moving right to left */}
           <div className="overflow-hidden mb-12">
-            <div className="flex logos-slide-left">
-            {Array.from({ length: 19 }).map((_, index) => (
-    <div
-      key={`partner-left-${index}`}
-      className="flex-shrink-0 mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
-    >
-      <img
-        src={`/assets/${index}.png`} // Ensure `partners` is an 
-        // alt={partners[index]?.name}
-        className="h-12 w-auto object-contain"
-      />
-    </div>
-  ))}
+            <div className="logos-slide">
+              <div className="logos-slide-track">
+                {Array.from({ length: 19 }).map((_, index) => (
+                  <div
+                    key={`partner-left-${index+1}`}
+                    className="logo-slide-item mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={`/assets/${index+1}.png`}
+                      className="h-12 w-auto object-contain"
+                      alt='clickhunts partner'
+                    />
+                  </div>
+                ))}
+                {/* Duplicate logos for seamless loop */}
+                {Array.from({ length: 19 }).map((_, index) => (
+                  <div
+                    key={`partner-left-dup-${index+1}`}
+                    className="logo-slide-item mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={`/assets/${index+1}.png`}
+                      className="h-12 w-auto object-contain"
+                      alt='clickhunts partner'
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Second row - moving left to right */}
           <div className="overflow-hidden">
-            <div className="flex logos-slide-right">
-            {Array.from({ length: 19 }).map((_, index) => (
-    <div
-      key={`partner-left-${index}`}
-      className="flex-shrink-0 mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
-    >
-      <img
-        src={`/assets/${index}.png`} // Ensure `partners` is an 
-        // alt={partners[index]?.name}
-        className="h-12 w-auto object-contain"
-      />
-    </div>
-  ))}
+            <div className="logos-slide">
+              <div className="logos-slide-track-reverse">
+                {Array.from({ length: 19 }).map((_, index) => (
+                  <div
+                    key={`partner-right-${index+1}`}
+                    className="logo-slide-item mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={`/assets/${index+1}.png`}
+                      className="h-12 w-auto object-contain"
+                      alt='clickhunts partner'
+                    />
+                  </div>
+                ))}
+                {/* Duplicate logos for seamless loop */}
+                {Array.from({ length: 19 }).map((_, index) => (
+                  <div
+                    key={`partner-right-dup-${index+1}`}
+                    className="logo-slide-item mx-8 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                  >
+                    <img
+                      src={`/assets/${index+1}.png`}
+                      className="h-12 w-auto object-contain"
+                      alt='clickhunts partner'
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .logos-slide-left, .logos-slide-right {
+        .logos-slide {
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+        }
+        
+        .logos-slide-track {
+          display: flex;
+          animation: slideLeft 40s linear infinite;
           width: max-content;
         }
-
-        .logos-slide-left {
-          animation: slideLeft 40s linear infinite;
-        }
-
-        .logos-slide-right {
+        
+        .logos-slide-track-reverse {
+          display: flex;
           animation: slideRight 40s linear infinite;
+          width: max-content;
         }
-
+        
+        .logo-slide-item {
+          flex-shrink: 0;
+        }
+        
         @keyframes slideLeft {
           0% {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-66.666%);
+            transform: translateX(-50%);
           }
         }
-
+        
         @keyframes slideRight {
           0% {
-            transform: translateX(-66.666%);
+            transform: translateX(-50%);
           }
           100% {
             transform: translateX(0);
           }
         }
-
-        .logos-slide-left:hover,
-        .logos-slide-right:hover {
+        
+        .logos-slide-track:hover,
+        .logos-slide-track-reverse:hover {
           animation-play-state: paused;
         }
       `}</style>
