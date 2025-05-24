@@ -20,6 +20,7 @@ import ScrollToTop from "./components/scrollTop";
 import ClickHuntsFooter from "./components/clickhunts-footer";
 import Privacy from "./pages/privacy";
 import TopOffer from "./pages/top-offer/topOffer";
+import EventPayout from "./pages/event-payout/eventPayout";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
       <Route path='/payment-edit' element={<PaymentEdit />}/>
       <Route path='/privacy' element={<Privacy />}/>
       <Route path='/top-offer' element={<TopOffer />}/>
+      <Route path='/event-payout' element={<EventPayout />}/>
     </Routes>
     <ClickHuntsFooter/>
   </BrowserRouter>

@@ -70,6 +70,11 @@ const GoogleSheetAPI = () => {
     return rowData && rowData[0] === 'Active';
   };
 
+  // Check if a row should have the "Pause" marker
+  const isPauseRow = (rowIndex, rowData) => {
+    return rowData && rowData[0] === 'Pause';
+  };
+
   // Filter data based on search term and active filter
   const filteredData = React.useMemo(() => {
     if (!data || data.length <= 2) return []; // Changed from <= 1 to <= 2
@@ -108,11 +113,9 @@ const GoogleSheetAPI = () => {
         {headers.map((header, index) => (
           <th 
             key={index} 
-            className="px-4 py-3 text-left font-semibold border-b border-[#03808e] bg-slate-800 whitespace-nowrap"
-            // Prevent extremely narrow columns
-            style={{ minWidth: '120px' }}
+            className="px-1 py-2 text-left font-semibold border-b border-[#03808e] bg-slate-800"
           >
-            <div className="truncate">{header}</div>
+            <div className="truncate text-xs">{header}</div>
           </th>
         ))}
       </tr>
@@ -145,6 +148,9 @@ const GoogleSheetAPI = () => {
       // Check if this is an active row
       const isActive = isActiveRow(rowIndex, row);
       
+      // Check if this is a pause row
+      const isPause = isPauseRow(rowIndex, row);
+      
       // Check if this is the last row (Summary)
       const isLastRow = rowIndex === filteredData.length - 1 && !isSectionHeader(row) && row[0]?.includes("Total");
       
@@ -152,7 +158,7 @@ const GoogleSheetAPI = () => {
         return (
           <tr key={rowIndex} className="sticky bottom-0 z-10">
             <td 
-              colSpan={6} 
+              colSpan={headerColSpan} 
               className="bg-gradient-to-r from-[#1e6c59] to-[#1a8c72] text-white text-center py-3 font-bold border-t border-[#0e594a] shadow-md"
             >
               {row[0]}
@@ -164,42 +170,47 @@ const GoogleSheetAPI = () => {
       return (
         <tr 
           key={rowIndex} 
-          className={`transition-colors duration-150 hover:bg-[#f0f9fa] ${
-            rowIndex % 2 === 0 ? "bg-white" : "bg-[#f8fbfb]"
+          className={`transition-colors duration-150 ${
+            isPause ? "bg-red-100 hover:bg-red-200" : 
+            rowIndex % 2 === 0 ? "bg-white hover:bg-[#f0f9fa]" : "bg-[#f8fbfb] hover:bg-[#f0f9fa]"
           }`}
         >
           {/* Ensure we don't try to render more cells than there are columns */}
           {row.slice(0, headerColSpan).map((cell, colIndex) => {
             // Get the corresponding header for this column
             const headerLabel = data[1] && data[1][colIndex] ? data[1][colIndex] : `Column ${colIndex + 1}`;
-            const isCellLong = cell && cell.toString().length > 30;
+            const isCellLong = cell && cell.toString().length > 15;
             
             return (
               <td 
                 key={colIndex} 
-                className="border-b border-[#e5eef0] py-2.5 px-4 text-sm whitespace-nowrap"
-                // Ensure consistent widths aligned with headers
-                style={{ minWidth: '120px' }}
+                className={`border-b ${isPause ? 'border-red-200' : 'border-[#e5eef0]'} py-1 px-1 text-xs`}
               >
                 {isActive && colIndex === 0 ? (
                   <div className="flex items-center text-emerald-600 font-medium">
-                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                    <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-1 animate-pulse"></span>
                     <span>Active</span>
+                  </div>
+                ) : isPause && colIndex === 0 ? (
+                  <div className="flex items-center text-red-600 font-medium">
+                    <span className="inline-block w-2 h-2 rounded-full bg-red-500 mr-1"></span>
+                    <span>Pause</span>
                   </div>
                 ) : (
                   <div className="relative group">
                     <div 
-                      className={`max-w-xs truncate ${isCellLong ? 'cursor-pointer text-[#048998] hover:underline' : ''}`}
+                      className={`truncate ${isCellLong ? 'cursor-pointer text-[#048998] hover:underline' : ''}`}
                       onClick={() => isCellLong && showCellContent(headerLabel, cell)}
+                      title={cell}
                     >
                       {cell || "—"}
                     </div>
                     
                     {/* Tooltip for long content that stays within viewport */}
                     {isCellLong && (
-                      <div className="hidden group-hover:block absolute left-0 -top-2 transform -translate-y-full bg-gray-800 text-white text-xs rounded py-1 px-2 min-w-[200px] max-w-[300px] z-50 whitespace-normal break-words">
-                        <div className="font-bold mb-1">{headerLabel}:</div>
-                        <div>{cell}</div>
+                      <div className="hidden group-hover:block absolute left-0 -top-2 transform -translate-y-full bg-gray-800 text-white text-xs rounded py-1 px-2 min-w-[150px] max-w-[200px] z-50 whitespace-normal break-words">
+                        <div className="font-bold mb-1 text-xs">{headerLabel}:</div>
+                        <div className="text-xs">{cell}</div>
                         <div className="text-gray-300 text-[10px] mt-1 italic">Click to view full content</div>
                         <div className="absolute bottom-0 left-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-gray-800"></div>
                       </div>
@@ -214,7 +225,7 @@ const GoogleSheetAPI = () => {
           {row.length < headerColSpan && Array(headerColSpan - row.length).fill(0).map((_, i) => (
             <td 
               key={`empty-${i}`}
-              className="border-b border-[#e5eef0] py-2.5 px-4 text-sm whitespace-nowrap"
+              className={`border-b ${isPause ? 'border-red-200' : 'border-[#e5eef0]'} py-1 px-1 text-xs`}
             >
               <div className="text-gray-400">—</div>
             </td>
@@ -310,11 +321,12 @@ const GoogleSheetAPI = () => {
           <div className="text-gray-600 font-medium">Loading data...</div>
         </div>
       ) : (
-        <div className="overflow-y-auto overflow-x-auto h-[calc(100vh-200px)] scrollbar-thin scrollbar-thumb-[#048998]/20 scrollbar-track-transparent" ref={tableRef}>
+        <div className="overflow-y-auto h-[calc(100vh-200px)] scrollbar-thin scrollbar-thumb-[#048998]/20 scrollbar-track-transparent" ref={tableRef}>
           {data.length > 1 ? (
-            <div className="min-w-full inline-block align-middle">
-              <div className="overflow-hidden">
-                <table className="divide-y divide-gray-200" >
+            <div className="w-full inline-block align-middle">
+              {/* Wrap table in a div with overflow-hidden to prevent horizontal scrolling */}
+              <div className="overflow-x-hidden">
+                <table className="w-full table-fixed divide-y divide-gray-200">
                   <thead className="sticky top-0 z-20">
                     {renderTableHeaders()}
                   </thead>
